@@ -1,0 +1,31 @@
+.page-footer {
+  min-height: 100px;
+  font-size: 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  a {
+    transition: 0.5s;
+    color: $white;
+    opacity: 0.5;
+  }
+
+  a:hover {
+    opacity: 1;
+  }
+}
+
+.page-footer__github-logo {
+  background-color: $white;
+  border-radius: 50%;
+}
+
+.page-footer__link-author {
+  display: flex;
+  align-items: center;
+}
+
+.page-footer__author {
+  margin-right: 10px;
+}

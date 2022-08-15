@@ -1,0 +1,22 @@
+.page-header {
+  position: fixed;
+  min-width: 100%;
+  max-width: 1440px;
+  background-color: $bg;
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  z-index: 2;
+
+  @media (min-width: $tablet) {
+    padding-bottom: 20px;
+  }
+}
+
+
+.page-header__logo {
+  background-color: $black-opacity-0;
+  width: 200px;
+}

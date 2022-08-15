@@ -1,0 +1,136 @@
+.movies-catalog {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.movies-catalog__list {
+  margin: 0 auto;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  @media (min-width: $mobile-460) {
+    padding-left: 30px;
+  }
+}
+
+.movies-catalog__item {
+  position: relative;
+  margin-bottom: 25px;
+
+  @media (min-width: $mobile-460) {
+    margin-right: 30px;
+  }
+}
+
+.movies-catalog__item-selected {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30px;
+
+  @media (min-width: $desktop-1024) {
+    flex-direction: row;
+  }
+}
+
+.movies-catalog__link {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+.movies-catalog__item-img {
+  width: 280px;
+  height: 420px;
+  cursor: pointer;
+  border-radius: 4px;
+  box-shadow: 0px 0px 10px 0px $grey-opacity-30;
+  transition: 0.2s;
+
+  &:hover {
+    box-shadow: 0px 0px 30px 0px $grey-opacity-60;
+  }
+}
+
+.movies-catalog__item-img-selected {
+  width: 280px;
+  border-radius: 4px;
+  object-fit: contain;
+
+  @media (min-width: $tablet) {
+    width: 380px;
+    height: 570px;
+  }
+}
+
+.movies-catalog__item-text-wrapper {
+  padding: 0 30px;
+
+  @media (min-width: $tablet) {
+    align-self: flex-start;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+  }
+
+  p {
+    margin: 0 0 10px 0;
+  }
+}
+
+.movies-catalog__item-text {
+  font-size: 16px;
+  opacity: 0.5;
+}
+
+.movies-catalog__title {
+  max-width: 280px;
+  margin-bottom: 0;
+  margin-top: 10px;
+}
+
+.movies-catalog__date {
+  margin: 0;
+}
+
+.movies-catalog__item-title {
+  font-size: 36px;
+  line-height: 44px;
+  margin-top: 0;
+}
+
+.movies-catalog__item-kinopoisk-link {
+  max-width: 140px;
+  font-size: 26px;
+  padding: 20px 0;
+  color: $yellow;
+  transition: 0.5s;
+
+  &:hover {
+    color: $yellow;
+  }
+
+  span {
+    font-size: 14px;
+  }
+}
+
+.movies-catalog__item-rating {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 10px;
+  left: 4px;
+  color: $yellow;
+  background-color: $bg;
+  box-shadow: 0px 0px 10px 0px $grey-opacity-60;
+  min-width: 30px;
+  min-height: 30px;
+  border-radius: 50%;
+  opacity: 0.6;
+}

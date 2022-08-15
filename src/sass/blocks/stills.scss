@@ -1,0 +1,15 @@
+.stills__list {
+  margin: 0 auto;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  height: 80px;
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
+.stills__item-img {
+  cursor: pointer;
+}

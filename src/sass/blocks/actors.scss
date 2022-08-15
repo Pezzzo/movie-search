@@ -1,0 +1,22 @@
+.actors__list {
+  display: flex;
+  flex-direction: column;
+}
+
+.actors__item {
+display: flex;
+padding: 20px;
+border-bottom: 1px solid $grey-opacity-30;
+}
+
+.actors__names-wrapper {
+  text-align: left;
+
+  p {
+    margin-top: 0;
+  }
+}
+
+.actors__item-img {
+  margin-right: 20px;
+}
