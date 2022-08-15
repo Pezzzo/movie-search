@@ -20,6 +20,8 @@ const pagination = document.querySelector('.pagination');
 const paginationList = document.querySelector('.pagination__list');
 const buttonPrev = document.querySelector('.pagination__button-prev');
 const buttonNext = document.querySelector('.pagination__button-next');
+const buttonStart = document.querySelector('.pagination__button-start');
+const buttonEnd = document.querySelector('.pagination__button-end');
 const preloader = document.querySelector('.preloader');
 
 // отрисовка короткого списка создателей
@@ -98,6 +100,8 @@ const renderOneMovie = (value) => {
 const renderList = (value) => {
   preloader.classList.remove('done');
 
+
+
   if (variables.popularMovie) {
     variables.stateUrl = `${URLS.popularFilms}${value}`;
   } else if (variables.top250) {
@@ -122,7 +126,9 @@ const renderList = (value) => {
 
     paginationList.style.marginLeft = variables.rangeCounter;
     buttonPrev.setAttribute('disabled', 'disabled');
+    buttonStart.setAttribute('disabled', 'disabled');
     buttonNext.removeAttribute('disabled');
+    buttonEnd.removeAttribute('disabled');
 
     document.querySelector('.pagination__link').classList.add('pagination__link--active');
     variables.popularMovie = false;

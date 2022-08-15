@@ -51,7 +51,7 @@ const getHistory = () => {
       pagination.classList.remove('display-none');
       createMovieList(data.films);
       createPaginationLinks(data);
-      setPaginationRange(data.pagesCount, res[1], 1);
+      setPaginationRange(data.pagesCount, res[1]);
 
       paginationList.style.marginLeft = `${variables.rangeCounter}px`;
 

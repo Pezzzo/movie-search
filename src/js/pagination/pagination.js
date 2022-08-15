@@ -22,7 +22,7 @@ const showAvailablePages = () => {
     }
 
     if (end) {
-      setPaginationRange(links.length, String(links.length-1), 0);
+      setPaginationRange(links.length, String(links.length-1));
       paginationList.style.marginLeft = `${variables.rangeCounter}px`;
     }
 
@@ -45,19 +45,20 @@ const getPaginationRange = (array, range, part) => {
   return array.slice(start, end);
 };
 
-const setPaginationRange = (arrLength, pageNumber, value) => {
+const setPaginationRange = (arrLength, pageNumber) => {
 
   const PAGINATION_NUMBERS = 5;
   let currentPaginationPosition = 255;
   let getRange = [];
 
-  for (let i = 1; i <= arrLength; i++) {
+  for (let i = 0; i < arrLength; i++) {
     getRange.push(String(i));
   }
 
-  for (let i = value; i < getRange.length; i++) {
-    currentPaginationPosition += PAGINATION_STEP;
-    getPaginationRange(getRange, PAGINATION_NUMBERS, i);
+  for (let i = 0; i < getRange.length; i++) {
+    if (!getPaginationRange(getRange, PAGINATION_NUMBERS, i).includes(pageNumber)) {
+      currentPaginationPosition += PAGINATION_STEP;
+    }
     if (getPaginationRange(getRange, PAGINATION_NUMBERS, i).includes(pageNumber)) {
       variables.rangeCounter = currentPaginationPosition;
       return variables.rangeCounter;

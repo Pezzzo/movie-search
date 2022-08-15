@@ -18,7 +18,10 @@ const init = () => {
   goUp();
 
   window.addEventListener('popstate', () => {
-    closeModal();
+    if (document.querySelector('.shown')) {
+      closeModal();
+
+    }
     getHistory();
   });
 

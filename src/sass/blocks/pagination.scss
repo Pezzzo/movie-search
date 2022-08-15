@@ -1,6 +1,8 @@
 .pagination {
+  position: relative;
   display: flex;
   justify-content: center;
+  margin-bottom: 50px;
 
   @media (min-width: $tablet) {
     margin-bottom: 40px;
@@ -72,4 +74,28 @@
 
 .display-none {
   display: none;
+}
+
+.pagination__button-start,
+.pagination__button-end,
+.pagination__button-prev,
+.pagination__button-next {
+  @media (max-width: $tablet) {
+    position: absolute;
+    top: 45px;
+  }
+}
+
+.pagination__button-start {
+    left: 20%;
+}
+.pagination__button-end {
+    right: 20%;
+}
+
+.pagination__button-prev {
+    left: 35%;
+}
+.pagination__button-next {
+    right: 35%;
 }
