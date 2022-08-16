@@ -1,4 +1,4 @@
-import { scrollUp } from "../util/util.js";
+import { scrollUp } from '../util/util.js';
 
 const buttonUp = document.querySelector('.page-main__button-up');
 

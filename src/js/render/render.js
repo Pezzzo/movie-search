@@ -1,5 +1,5 @@
 import { getData } from '../fetch/fetch.js';
-import { scrollUp, cleansingElement } from '../util/util';
+import { scrollUp, cleansingElement } from '../util/util.js';
 import { variables } from '../variables/variables.js';
 import { URLS } from '../url/url.js';
 import { createMovieList } from '../create-movie-elements/create-movie-list.js';

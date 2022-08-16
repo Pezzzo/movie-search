@@ -14,8 +14,6 @@
   margin-bottom: 10px;
 }
 
-
-
 .similar__title {
   position: absolute;
 
@@ -23,7 +21,7 @@
   background: $black-opacity-60;
   color: $white;
   width: 140px;
-  height:210px;
+  height: 210px;
   top: 120px;
 
   @media (min-width: $tablet) {
@@ -40,8 +38,8 @@
 
   @media (min-width: $tablet) {
 
-    filter:sepia(50%);
-    transition:0.6s;
+    filter: sepia(50%);
+    transition: 0.6s;
 
     .similar__title {
       visibility: visible;

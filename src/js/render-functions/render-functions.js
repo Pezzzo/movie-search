@@ -1,12 +1,12 @@
-import { getData } from "../fetch/fetch.js";
-import { popap } from "../modal/modal.js";
-import { URLS } from "../url/url.js";
-import { cleansingElement } from "../util/util.js";
-import { variables } from "../variables/variables.js";
-import { createMovieStillsSlides } from "../create-movie-elements/create-popup-img-slider.js";
-import { createMovieList } from "../create-movie-elements/create-movie-list.js";
-import { createPaginationLinks } from "../create-movie-elements/create-pagination-links.js";
-import { createMovieFilterList } from "../create-movie-elements/create-movie-filter-list.js";
+import { getData } from '../fetch/fetch.js';
+import { popap } from '../modal/modal.js';
+import { URLS } from '../url/url.js';
+import { cleansingElement } from '../util/util.js';
+import { variables } from '../variables/variables.js';
+import { createMovieStillsSlides } from '../create-movie-elements/create-popup-img-slider.js';
+import { createMovieList } from '../create-movie-elements/create-movie-list.js';
+import { createPaginationLinks } from '../create-movie-elements/create-pagination-links.js';
+import { createMovieFilterList } from '../create-movie-elements/create-movie-filter-list.js';
 import {
   createMovieItem,
   createMovieItemStaffPreview,
@@ -14,7 +14,7 @@ import {
   createMovieItemSimilars,
   createMovieItemStills,
   createSeasonsNumber
-} from "../create-movie-elements/create-movie-item.js";
+} from '../create-movie-elements/create-movie-item.js';
 
 const pagination = document.querySelector('.pagination');
 const paginationList = document.querySelector('.pagination__list');

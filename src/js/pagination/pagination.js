@@ -1,4 +1,4 @@
-import { variables } from "../variables/variables.js";
+import { variables } from '../variables/variables.js';
 
 const pagination = document.querySelector('.pagination');
 const paginationList = document.querySelector('.pagination__list');
