@@ -6,7 +6,7 @@ https://movie-search-pet.netlify.app
 
 Разработано как Pet-проект (без использования сторонних библиотек и фреймворков).
 
-Использованы:
+Использовано:
 
 * js
 
@@ -15,6 +15,7 @@ https://movie-search-pet.netlify.app
 * webpack
 
 В качестве базыданных используется Kinopoisk Api Unofficial (https://kinopoiskapiunofficial.tech/).
+Также использовано History API.
 
 npm i/install
 
