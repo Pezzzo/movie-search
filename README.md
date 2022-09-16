@@ -14,7 +14,7 @@ https://movie-search-pet.netlify.app
 
 * webpack
 
-В качестве базыданных используется Kinopoisk Api Unofficial (https://kinopoiskapiunofficial.tech/).
+В качестве базы данных используется Kinopoisk Api Unofficial (https://kinopoiskapiunofficial.tech/).
 Также использовано History API.
 
 npm i/install
