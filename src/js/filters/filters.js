@@ -11,13 +11,9 @@ const setFilters = () => {
   filters.forEach((el) => {
     el.classList.remove('filters__link--active');
 
-    if (history.state.includes(URL_PART_POPULAR_FILMS) && el.dataset.value === URL_PART_POPULAR_FILMS) {
-      el.classList.toggle('filters__link--active');
-    }
-    if (history.state.includes(URL_PART_TOP250) && el.dataset.value === URL_PART_TOP250) {
-      el.classList.toggle('filters__link--active');
-    }
-    if (history.state.includes(URL_PART_SEARCH_BY_DATE) && el.dataset.value === URL_PART_SEARCH_BY_DATE) {
+    if (history.state.includes(URL_PART_POPULAR_FILMS) && el.dataset.value === URL_PART_POPULAR_FILMS ||
+      history.state.includes(URL_PART_TOP250) && el.dataset.value === URL_PART_TOP250 ||
+      history.state.includes(URL_PART_SEARCH_BY_DATE) && el.dataset.value === URL_PART_SEARCH_BY_DATE) {
       el.classList.toggle('filters__link--active');
     }
   });

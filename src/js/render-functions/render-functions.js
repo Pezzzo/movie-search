@@ -48,21 +48,18 @@ const renderActorsList = (value) => {
   history.pushState(`${URLS.actors}${value}`, '', ``);
 };
 
-// отрисовка списка похожих фильмов
-const renderSimilarList = (value) => {
-  preloader.classList.remove('done');
-  getData(`${URLS.similarFilms}${value}/similars`).then(data => {
-    createMovieItemSimilars(data.items);
-  });
-};
-
 // отрисовка кадров из фильма
-const renderMovieItemStills = (value) => {
+const renderMovieItemStillsAndSimilarsList = (value) => {
   preloader.classList.remove('done');
   getData(`${URLS.filmStills}${value}/images?type=STILL&page=1`).then(data => {
     createMovieItemStills(data.items);
     createMovieStillsSlides();
     popap();
+
+    // отрисовка списка похожих фильмов
+    getData(`${URLS.similarFilms}${value}/similars`).then(data => {
+      createMovieItemSimilars(data.items);
+    });
   });
 };
 
@@ -99,8 +96,6 @@ const renderOneMovie = (value) => {
 // отрисовка списков фильмов
 const renderList = (value) => {
   preloader.classList.remove('done');
-
-
 
   if (variables.popularMovie) {
     variables.stateUrl = `${URLS.popularFilms}${value}`;
@@ -161,7 +156,6 @@ const renderHomePage = () => {
     createPaginationLinks(data);
     pagination.classList.remove('display-none');
     document.querySelector('.pagination__link').classList.add('pagination__link--active');
-    console.log(data);
   });
 
   history.pushState(`${URLS.popularFilms}1`, '', ``);
@@ -170,8 +164,7 @@ const renderHomePage = () => {
 export {
   renderActorsListPreview,
   renderActorsList,
-  renderSimilarList,
-  renderMovieItemStills,
+  renderMovieItemStillsAndSimilarsList,
   renderOneMovie,
   renderList,
   renderHomePage,

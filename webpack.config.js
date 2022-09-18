@@ -2,9 +2,9 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
-let mode = 'development'
+let mode = 'development';
 if (process.env.NODE_ENV === 'production') {
-  mode = 'production'
+  mode = 'production';
 }
 console.log(mode + ' mode')
 
@@ -14,7 +14,7 @@ module.exports = {
     bundle: './src/js/index.js',
   },
   output: {
-    path: path.resolve(__dirname, './build/'),
+    path: path.resolve(__dirname, './build'),
     assetModuleFilename: "img/[name][ext][query]",
     filename: '[name].js',
     clean: true,
@@ -49,7 +49,7 @@ module.exports = {
       {
         test: /\.(sa|sc|c)ss$/,
         use: [
-          (mode === 'development') ? "style-loader" : MiniCssExtractPlugin.loader,
+          MiniCssExtractPlugin.loader,
           "css-loader",
           {
             loader: "postcss-loader",
@@ -58,9 +58,6 @@ module.exports = {
                 plugins: [
                   [
                     "postcss-preset-env",
-                    {
-                      // Options
-                    },
                   ],
                 ],
               },
@@ -82,9 +79,6 @@ module.exports = {
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
-          // options: {
-          //     presets: ['@babel/preset-env']
-          // }
         }
       }
     ]

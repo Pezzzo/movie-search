@@ -98,7 +98,6 @@ const closeModalKeyHandler = (evt) => {
   }
 };
 
-
 const popap = () => {
   window.addEventListener('click', (evt) => {
     if (evt.target.closest('.modal') && !evt.target.closest('.modal-popap__arrow')) {

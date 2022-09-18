@@ -6,8 +6,7 @@ import { createMovieList } from '../create-movie-elements/create-movie-list.js';
 import {
   renderActorsListPreview,
   renderActorsList,
-  renderSimilarList,
-  renderMovieItemStills,
+  renderMovieItemStillsAndSimilarsList,
   renderOneMovie,
   renderList,
   renderSearchByDateList
@@ -74,8 +73,7 @@ const renderPage = () => {
       variables.oneMovie = true;
       renderOneMovie(link.dataset.moviesId);
       renderActorsListPreview(link.dataset.moviesId);
-      renderMovieItemStills(link.dataset.moviesId);
-      renderSimilarList(link.dataset.moviesId);
+      renderMovieItemStillsAndSimilarsList(link.dataset.moviesId);
     }
 
     if (actorsLink) {
