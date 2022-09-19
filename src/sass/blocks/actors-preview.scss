@@ -22,4 +22,9 @@
 
 .actors-preview__actor-link {
   color: $yellow;
+  transition: 0.5s;
+
+  &:hover {
+    color: $yellow-hover;
+  }
 }

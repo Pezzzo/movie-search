@@ -1,5 +1,5 @@
 import { getData } from '../fetch/fetch.js';
-import { popap } from '../modal/modal.js';
+import { popup } from '../modal/modal.js';
 import { URLS } from '../url/url.js';
 import { cleansingElement } from '../util/util.js';
 import { variables } from '../variables/variables.js';
@@ -54,7 +54,7 @@ const renderMovieItemStillsAndSimilarsList = (value) => {
   getData(`${URLS.filmStills}${value}/images?type=STILL&page=1`).then(data => {
     createMovieItemStills(data.items);
     createMovieStillsSlides();
-    popap();
+    popup();
 
     // отрисовка списка похожих фильмов
     getData(`${URLS.similarFilms}${value}/similars`).then(data => {

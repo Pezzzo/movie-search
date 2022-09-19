@@ -15,7 +15,7 @@ import { cleansingElement } from '../util/util.js';
 import { URLS } from '../url/url.js';
 import { setPaginationRange, setStatePaginationRange } from '../pagination/pagination.js';
 import { variables } from '../variables/variables.js';
-import { popap } from '../modal/modal.js';
+import { popup } from '../modal/modal.js';
 import { setFilters } from '../filters/filters.js';
 
 const pagination = document.querySelector('.pagination');
@@ -113,7 +113,7 @@ const getHistory = () => {
         pagination.classList.add('display-none');
         createMovieItemStills(data.items);
         createMovieStillsSlides();
-        popap();
+        popup();
       });
 
       getData(`${URLS.similarFilms}${link.dataset.moviesId}/similars`).then(data => {

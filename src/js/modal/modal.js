@@ -58,19 +58,29 @@ const renderModalImg = (evt) => {
 const openModalHandler = (evt) => {
   const arrowBack = document.querySelector('.modal-popup__arrow-back');
   const arrowforward = document.querySelector('.modal-popup__arrow-forward');
-  const stillsImg = document.querySelectorAll('.stills__item-img')
+  const stillsImg = document.querySelectorAll('.stills__item-img');
   const modalImg = document.querySelector('.modal-popup__img');
   const stillsImgTarget = evt.target.closest('.stills__item-img');
+  const stillsLink = evt.target.closest('.stills__item-link');
 
-  modalImg.src = stillsImgTarget.src;
-  if (evt.target.src === document.querySelectorAll('.stills__item-img')[0].src) {
+  if (evt.target !== stillsImgTarget && evt.target !== stillsLink) {
+    return;
+  }
+
+  if (evt.target === stillsLink) {
+    modalImg.src = stillsImg[0].src;
+  } else if (evt.target === stillsImgTarget) {
+    modalImg.src = stillsImgTarget.src;
+  }
+
+  if (modalImg.src === stillsImg[0].src) {
     arrowBack.setAttribute('disabled', 'disabled');
   }
-  if (evt.target.src === stillsImg[stillsImg.length - 1].src) {
+  if (modalImg.src === stillsImg[stillsImg.length - 1].src) {
     arrowforward.setAttribute('disabled', 'disabled');
   }
 
-  if (stillsImgTarget) {
+  if (stillsImgTarget || stillsLink) {
     document.querySelector('.modal').classList.add('shown');
     document.querySelector('.page').classList.add('page--modal-open');
     disableScrolling();
@@ -98,19 +108,25 @@ const closeModalKeyHandler = (evt) => {
   }
 };
 
-const popap = () => {
+const popup = () => {
   window.addEventListener('click', (evt) => {
-    if (evt.target.closest('.modal') && !evt.target.closest('.modal-popap__arrow')) {
+    const modal = evt.target.closest('.modal');
+    const arrow = evt.target.closest('.modal-popap__arrow');
+    const page = evt.target.closest('.page');
+    const img = evt.target.closest('.stills__item-img');
+    const modalLink = evt.target.closest('.stills__item-link');
+
+    if (modal && !arrow) {
       evt.stopPropagation();
-    } else if (evt.target.closest('.page') && !evt.target.closest('.stills__item-img')) {
+    } else if (page && !img && !modalLink) {
       closeModal();
     }
   });
 
   window.addEventListener('keydown', closeModalKeyHandler);
-  document.querySelector('.stills__list').addEventListener('click', openModalHandler);
+  document.querySelector('.stills').addEventListener('click', openModalHandler);
   document.querySelector('.modal-popup__close-button').addEventListener('click', closeModalMouseHandler);
   document.querySelector('.modal').addEventListener('click', renderModalImg);
 }
 
-export { popap, enableScrolling, closeModal };
+export { popup, enableScrolling, closeModal };

@@ -80,10 +80,11 @@ const createMovieItemStills = (data) => {
       <ul class="stills__list">
   ${data.map(({ imageUrl }) => `
         <li class="stills__item">
-          <img class="stills__item-img" src="${imageUrl}" height="80" alt="movie">
+          <img class="stills__item-img" src="${imageUrl}" width="170" height="80" alt="movie">
         </li>
 `).join('')}
       </ul>
+      <h3 class="stills__item-link">Смотреть все</h3>
   </div>`
   );
 };

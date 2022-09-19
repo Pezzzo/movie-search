@@ -4,12 +4,33 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  height: 80px;
-  width: 100%;
+  align-items: center;
+  height: 100px;
+  max-width: 600px;
   overflow: hidden;
-  margin-bottom: 30px;
+}
+
+.stills__item {
+  margin: 4px 10px 20px 0;
 }
 
 .stills__item-img {
   cursor: pointer;
+  align-self: end;
+  height: 90px;
+  object-fit: contain;
+}
+
+.stills__item-link {
+  max-width: 100px;
+  color: $yellow;
+  margin: 0 auto;
+  margin-top: 10px;
+  margin-bottom: 50px;
+  cursor: pointer;
+  transition: 0.5s;
+
+  &:hover {
+    color: $yellow-hover;
+  }
 }
