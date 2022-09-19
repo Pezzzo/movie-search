@@ -75,9 +75,14 @@ const openModalHandler = (evt) => {
 
   if (modalImg.src === stillsImg[0].src) {
     arrowBack.setAttribute('disabled', 'disabled');
+  } else {
+    arrowBack.removeAttribute('disabled');
   }
+
   if (modalImg.src === stillsImg[stillsImg.length - 1].src) {
     arrowforward.setAttribute('disabled', 'disabled');
+  } else {
+    arrowforward.removeAttribute('disabled');
   }
 
   if (stillsImgTarget || stillsLink) {
