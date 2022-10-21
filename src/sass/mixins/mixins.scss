@@ -1,0 +1,47 @@
+@mixin font-setting($a, $b) {
+  font-size: $a;
+  line-height: $b;
+}
+
+@mixin padding-x($a, $b) {
+  padding-right: $b;
+  padding-left: $a;
+}
+
+@mixin padding-y($a, $b) {
+  padding-top: $a;
+  padding-bottom: $b;
+}
+
+@mixin margin-y($a, $b) {
+  margin-top: $a;
+  margin-bottom: $b;
+}
+
+@mixin zero-indents() {
+  margin: 0;
+  padding: 0;
+}
+
+@mixin bg-image($png, $no-repeat, $x, $y, $size) {
+  background-image: url($png);
+  background-repeat: $no-repeat;
+  background-position: $x $y;
+  background-size: $size;
+}
+
+@mixin webp-and-retina-bg-image($png2x, $webp, $webp2x) {
+  @media only screen and (min-resolution: 1.5dppx),
+    only screen and (min-resolution: 192dpi) {
+    background-image: url($png2x);
+  }
+
+  @supports (background-image: url($webp)) {
+    background-image: url($webp);
+
+    @media only screen and (min-resolution: 1.5dppx),
+      only screen and (min-resolution: 192dpi) {
+      background-image: url($webp2x);
+    }
+  }
+}

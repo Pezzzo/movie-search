@@ -1,10 +1,13 @@
 // Globals
 @import "normalise/normalise.scss";
+@import "variables/variables.scss";
+@import "mixins/mixins.scss";
 @import "media-queries/media-queries.scss";
 @import "colors/colors.scss";
 @import "global/global.scss";
 // Blocks
 @import "blocks/preloader.scss";
+@import "blocks/page.scss";
 @import "blocks/movies-catalog.scss";
 @import "blocks/actors-preview.scss";
 @import "blocks/actors.scss";
