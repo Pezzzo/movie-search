@@ -1,26 +1,11 @@
-.filters {
-  margin-bottom: 20px;
-  margin-top: 10px;
-
-  @media (min-width: $tablet) {
-    margin-bottom: 40px;
-  }
-}
-
-.filters__list {
-  margin: 0 auto;
-  padding: 0;
-  min-height: 40px;
+.form {
   display: flex;
-  justify-content: center;
-
-  @media (max-width: $tablet) {
-    flex-direction: column;
-  }
+  flex-wrap: wrap;
 }
 
-.filters__link {
+.form__button {
   font-size: 18px;
+  line-height: 110%;
   padding: 8px 6px;
   background-color: $bg;
   border: 1px solid $orange-border-opacity-30;
@@ -42,29 +27,9 @@
     background-color: $yellow;
     cursor: auto;
   }
-
-  @media (min-width: $tablet) {
-    font-size: 24px;
-    padding: 12px 10px;
-  }
 }
 
-.form-filters {
-  display: flex;
-  flex-direction: column;
-}
-
-.filters__link-date {
-  position: relative;
-}
-
-.filters__form {
-  position: absolute;
-  max-width: 160px;
-  z-index: 2;
-}
-
-.form-filters__button {
+.form__button-submit {
   cursor: pointer;
   border: none;
   color: $white;
@@ -72,6 +37,7 @@
   font-size: 18px;
   transition: 0.5s;
   padding: 10px 0;
+  min-width: 70px;
 
   &:hover {
     box-shadow: 0px 0px 30px 0px $grey-opacity-60;
@@ -80,18 +46,19 @@
   }
 }
 
-.form-filters__input::placeholder {
+.form__input::placeholder {
   color: $black-opacity-20;
 }
 
-.form-filters__input,
-.form-filters__select {
+.form__input,
+.form__select {
   border: none;
   outline: none;
   font-size: 16px;
   line-height: 30px;
-  width: 100%;
+  width: 200px;
   transition: 0.5s;
+  // min-width: 201px;
 
   @media (min-width: $tablet) {
     font-size: 20px;
@@ -102,3 +69,4 @@
     box-shadow: 0px 0px 30px 0px $grey-opacity-60;
   }
 }
+

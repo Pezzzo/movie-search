@@ -1,0 +1,44 @@
+.page-nav__list {
+  margin: 0 auto;
+  padding: 0;
+  min-height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media (max-width: $tablet) {
+    flex-direction: column;
+  }
+}
+
+.page-nav__link {
+  display: block;
+  font-size: 18px;
+  line-height: 110%;
+  padding: 8px 6px;
+  background-color: $bg;
+  border: 1px solid $orange-border-opacity-30;
+  color: $white;
+  transition: 0.3s;
+  cursor: pointer;
+
+  &--active {
+    background-color: $yellow;
+    color: $white;
+  }
+
+  &:hover {
+    background-color: $yellow-opacity-30;
+    color: $white;
+  }
+
+  &--active:hover {
+    background-color: $yellow;
+    cursor: auto;
+  }
+
+  @media (min-width: $tablet) {
+    font-size: 24px;
+    padding: 12px 10px;
+  }
+}
