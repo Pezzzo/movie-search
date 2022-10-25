@@ -43,7 +43,7 @@ const setActiveClass = (location) => {
   if (location.includes('popular')) {
     document.querySelector('.page-nav__link-popular').classList.add('page-nav__link--active');
   }
-  if (location.includes('movie')) {
+  if (location.includes('movie') || location.includes('actors')) {
     links.forEach((e) => {
       e.classList.remove('page-nav__link--active');
     });

@@ -8,18 +8,18 @@ import { SwiperList } from '../blocks/swiper';
 
 const HomePage = () => {
 
-  const { filmsList, loading } = useSelectors();
+  // const { filmsList, loading } = useSelectors();
   const dispatch = useDispatch();
 
-  console.log(filmsList)
 
-  useEffect(() => {
-    dispatch(getFilms(URLS.awaitFilms));
-  }, []);
 
-  return loading ? <Preloader /> :  (
+  // useEffect(() => {
+  //   dispatch(getFilms(URLS.awaitFilms));
+  // }, []);
+
+  return  (
     <main className="page-main outer-wrapper">
-      <SwiperList films={filmsList}/>
+      {/* <SwiperList films={filmsList}/> */}
     </main>
   );
 }

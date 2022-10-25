@@ -1,9 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { useSelectors } from '../../hooks/useSelectors';
 
 const ActorsPreview = () => {
 
-  const { actorsList } = useSelectors();
+  const { actorsList, id } = useSelectors();
 
   const staff = [];
 
@@ -12,16 +13,20 @@ const ActorsPreview = () => {
       staff.push(actorsList[i]);
     }
   }
-
+  console.log(actorsList)
   return (
     <div className="actors-preview">
       <h2>Создатели, актёры:</h2>
-      {staff.map((item) => (
-        <li key={item.staffId}>
-          <p className="actors-preview__actor">{item.nameRu}</p>
-        </li>
-      ))}
-      <a className="actors-preview__actor-link" href="#">Показать ещё</a>
+      <ul className="actors-preview__list">
+        {staff.map((item) => (
+          <li
+            className="actors-preview__item"
+            key={item.staffId}>
+            <p className="actors-preview__actor">{item.nameRu}</p>
+          </li>
+        ))}
+      </ul>
+      <Link className="actors-preview__actor-link" to={`/movie=${id}=actors`}>Показать ещё</Link>
     </div>
   );
 }

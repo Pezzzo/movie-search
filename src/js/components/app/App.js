@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 // import { pagePreloader } from '../../js/page-preloader/page-preloader';
 import ROUTES from '../../routes/routes';
 import { PageWrapper } from '../layout/page-wrapper';
+import { ActorsPage } from '../pages/actors-page';
 import { HomePage } from '../pages/home-page';
 import { MoviePage } from '../pages/movie-page';
 import { PopularPage } from '../pages/popular-page';
@@ -20,9 +21,10 @@ const App = () => {
               element={<PopularPage />} />
             <Route path={ROUTES.TOP250.replace(ROUTES.HOME, "")}
               element={<Top250Page />} />
+            <Route path={ROUTES.ACTORS.replace(ROUTES.HOME, "")}
+              element={<ActorsPage />} />
             <Route path={ROUTES.MOVIE.replace(ROUTES.HOME, "")}
-            element={<MoviePage />}
-            />
+            element={<MoviePage />} />
           </Route>
         </Routes>
       </Router>
