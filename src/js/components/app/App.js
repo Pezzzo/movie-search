@@ -4,11 +4,12 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import ROUTES from '../../routes/routes';
 import { PageWrapper } from '../layout/page-wrapper';
 import { HomePage } from '../pages/home-page';
-import { Popular } from '../pages/popular';
-import { Top250 } from '../pages/top250';
+import { MoviePage } from '../pages/movie-page';
+import { PopularPage } from '../pages/popular-page';
+import { Top250Page } from '../pages/top250-page';
 
 const App = () => {
-  // pagePreloader();
+
   return (
     <>
       <Router>
@@ -16,12 +17,12 @@ const App = () => {
           <Route path={ROUTES.HOME} element={<PageWrapper />}>
             <Route index element={<HomePage />} />
             <Route path={ROUTES.POPULAR.replace(ROUTES.HOME, "")}
-              element={<Popular />} />
+              element={<PopularPage />} />
             <Route path={ROUTES.TOP250.replace(ROUTES.HOME, "")}
-              element={<Top250 />} />
-            {/* <Route path={ROUTES.TOP250.replace(ROUTES.HOME, "")}
-            element={<ResultsPage />}
-            /> */}
+              element={<Top250Page />} />
+            <Route path={ROUTES.MOVIE.replace(ROUTES.HOME, "")}
+            element={<MoviePage />}
+            />
           </Route>
         </Routes>
       </Router>

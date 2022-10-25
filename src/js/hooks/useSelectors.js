@@ -2,11 +2,22 @@ import { useSelector } from "react-redux";
 
 const useSelectors = () => {
 
-  const top250 = useSelector(state => state.top250.data);
+  const { error, loading } = useSelector(state => state.request);
+  const filmsList = useSelector(state => state.films.films);
+  const actorsList = useSelector(state => state.actors.actors);
   const pageCount = useSelector(state => state.pageCount.data);
+  const paginationCount = useSelector(state => state.paginationCount.number);
+  const {id, details} = useSelector(state => state.movie);
+
   return {
-    top250,
-    pageCount
+    filmsList,
+    pageCount,
+    error,
+    loading,
+    paginationCount,
+    id,
+    details,
+    actorsList
   }
 };
 

@@ -1,7 +1,7 @@
 import { createAction, createReducer } from "@reduxjs/toolkit";
 
 const initialState = {
-  data: 0,
+  data: 1,
 };
 
 export const getPageCount = createAction('PAGE_COUNT');

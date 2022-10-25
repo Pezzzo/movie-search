@@ -1,8 +1,8 @@
 const ROUTES = {
   HOME: '/',
-  POPULAR: '/popular',
-  FILM: '/film',
-  TOP250: '/top250',
+  POPULAR: '/popular=:id',
+  MOVIE: '/movie=:id',
+  TOP250: '/top250=:id',
 };
 
 export default ROUTES;

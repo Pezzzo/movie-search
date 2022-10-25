@@ -1,5 +1,6 @@
 import React from 'react';
-import {CustomLink} from '../ui/custom-link'
+import { Link } from 'react-router-dom';
+import { navLinkHandler } from '../../handlers/handlers';
 
 const Nav = () => {
 
@@ -7,19 +8,25 @@ const Nav = () => {
     <nav className="page-nav">
       <ul className="page-nav__list">
         <li className="page-nav__item">
-          <CustomLink className="page-nav__link--active" to='/'>
-            Главная
-          </CustomLink>
+          <Link
+            onClick={navLinkHandler}
+            className="page-nav__link page-nav__link-home" dada-nav="" to='/'>
+            Ожидаемые
+          </Link>
         </li>
         <li className="page-nav__item">
-          <CustomLink to='/popular'>
-            Популярное
-          </CustomLink>
+          <Link
+            onClick={navLinkHandler}
+            className="page-nav__link page-nav__link-popular" dada-nav="popular" to={`/popular=${1}`}>
+            Популярные
+          </Link>
         </li>
         <li className="page-nav__item">
-          <CustomLink to='/top250'>
+          <Link
+            onClick={navLinkHandler}
+            className="page-nav__link page-nav__link-top250" dada-nav="top250" to={`/top250=${1}`}>
             ТОП-250
-          </CustomLink>
+          </Link>
         </li>
         <li className="page-nav__item">
         </li>
@@ -27,4 +34,5 @@ const Nav = () => {
     </nav>
   );
 }
+
 export { Nav };

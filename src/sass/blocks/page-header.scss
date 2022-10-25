@@ -1,19 +1,25 @@
 .page-header {
   position: fixed;
   min-width: 100%;
-  max-width: 1440px;
+
   background-color: $bg;
-  min-height: 144px;
-  display: flex;
-  // align-items: center;
-  justify-content: space-around;
-  flex-wrap: wrap;
+  min-height: 120px;
+;
   z-index: 2;
   padding-top: 20px;
 
   @media (min-width: $tablet) {
     padding-bottom: 20px;
+    padding-top: 40px;
   }
+}
+
+.page-header__wrapper {
+  margin: 0 auto;
+  max-width: 1440px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center
 }
 
 .page-header__logo {
