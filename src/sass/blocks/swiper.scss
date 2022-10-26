@@ -23,8 +23,22 @@
 }
 
 .swiper-slide {
+  width: 100px;
   padding-top: 40px;
   padding-bottom: 120px;
+  opacity: 0.1;
+  cursor: auto;
+  pointer-events: none;
+  &--stills {
+    padding: 0;
+
+  }
+}
+
+.swiper-slide-active {
+  opacity: 1;
+  cursor: pointer;
+  pointer-events: auto;
 }
 
 .swiper__wrapper {
@@ -35,8 +49,8 @@
   justify-content: center;
 }
 
-.swiper-pagination {
-  padding-bottom: 70px;
+.swiper-wrapper {
+  align-items: center;
 }
 
 .swiper-button-next {
@@ -79,3 +93,4 @@
   font-size: 22px;
   // @include margin-y(30px, 0);
 }
+

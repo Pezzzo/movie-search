@@ -7,7 +7,10 @@ const useSelectors = () => {
   const actorsList = useSelector(state => state.actors.actors);
   const pageCount = useSelector(state => state.pageCount.data);
   const paginationCount = useSelector(state => state.paginationCount.number);
-  const {id, details} = useSelector(state => state.movie);
+  const {id, details, countries, genres} = useSelector(state => state.movie);
+  const stillsList = useSelector(state => state.stills.stills);
+  const similarList = useSelector(state => state.similar.similar);
+  const seasons = useSelector(state => state.seasons.seasons);
 
   return {
     filmsList,
@@ -17,7 +20,12 @@ const useSelectors = () => {
     paginationCount,
     id,
     details,
-    actorsList
+    actorsList,
+    stillsList,
+    similarList,
+    countries,
+    genres,
+    seasons
   }
 };
 

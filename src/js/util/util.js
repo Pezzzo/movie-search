@@ -50,5 +50,35 @@ const setActiveClass = (location) => {
   }
 };
 
-export { goUp, pagePreloader, scrollUp, setActiveClass };
+const disableScrolling = () => {
+  let x = window.scrollX;
+  let y = window.scrollY;
+  window.onscroll = () => {
+    window.scrollTo(x, y);
+  };
+};
+
+const enableScrolling = () => {
+  window.onscroll = () => { };
+};
+
+const openModal = (cb) => {
+  cb(true);
+  disableScrolling();
+};
+
+const closeModal = (cb) => {
+  cb(false);
+  enableScrolling();
+};
+
+
+const closeModalKey = (evt) => {
+  if (evt.key === 'Esc' || evt.key === 'Escape') {
+    evt.preventDefault();
+    enableScrolling();
+  }
+};
+
+export { goUp, pagePreloader, scrollUp, setActiveClass, openModal, closeModal, closeModalKey };
 

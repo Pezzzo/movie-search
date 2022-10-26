@@ -20,4 +20,5 @@ const Actors = ({ actors }) => {
     </div>
   );
 }
+
 export { Actors };

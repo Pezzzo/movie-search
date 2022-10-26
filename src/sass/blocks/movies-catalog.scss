@@ -59,8 +59,9 @@
 
 .movies-catalog__item-img-selected {
   width: 280px;
-  border-radius: 4px;
-  object-fit: contain;
+  object-fit: cover;
+  background-color: $white;
+
 
   @media (min-width: $tablet) {
     width: 380px;

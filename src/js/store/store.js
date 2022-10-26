@@ -5,6 +5,10 @@ import { requestStatusReducer } from "./reducers/request-status-reducer";
 import { paginationReducer } from "./reducers/pagination-reducer";
 import { movieDetailsReducer } from "./reducers/movie-details-reducer";
 import { actorsListReducer } from "./reducers/actors-list-reducer";
+import { stillsListReducer } from "./reducers/stills-list-reducer";
+import { similarListReducer } from "./reducers/similar-films-reducer";
+import { seasonsReducer } from "./reducers/seasons-reducer";
+
 
 const rootReducer = combineReducers({
   request: requestStatusReducer,
@@ -12,7 +16,10 @@ const rootReducer = combineReducers({
   pageCount: pageCountReducer,
   paginationCount: paginationReducer,
   movie: movieDetailsReducer,
-  actors: actorsListReducer
+  actors: actorsListReducer,
+  stills: stillsListReducer,
+  similar: similarListReducer,
+  seasons: seasonsReducer
 });
 
 const saveToLocalStorage = (state) => {

@@ -15,9 +15,9 @@
 }
 
 .stills__item-img {
-  cursor: pointer;
+
   align-self: end;
-  height: 90px;
+max-height: 240px;
   object-fit: contain;
 }
 

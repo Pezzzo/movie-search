@@ -13,8 +13,6 @@ const SwiperList = ({ films }) => {
       loop
       navigation
       pagination={{ clickable: true }}
-      onSwiper={(swiper) => console.log(swiper)}
-      onSlideChange={() => console.log('slide change')}
     >
       {films.map(({ filmId, posterUrl, nameRu, year, countries, genres, rating }) => (
         <SwiperSlide

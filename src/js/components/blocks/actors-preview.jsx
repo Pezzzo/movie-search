@@ -13,15 +13,15 @@ const ActorsPreview = () => {
       staff.push(actorsList[i]);
     }
   }
-  console.log(actorsList)
+
   return (
     <div className="actors-preview">
       <h2>Создатели, актёры:</h2>
       <ul className="actors-preview__list">
-        {staff.map((item) => (
+        {staff.map((item, index) => (
           <li
             className="actors-preview__item"
-            key={item.staffId}>
+            key={index}>
             <p className="actors-preview__actor">{item.nameRu}</p>
           </li>
         ))}

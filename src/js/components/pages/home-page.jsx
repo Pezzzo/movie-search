@@ -9,7 +9,7 @@ import { SwiperList } from '../blocks/swiper';
 const HomePage = () => {
 
   // const { filmsList, loading } = useSelectors();
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
 
 
@@ -17,7 +17,7 @@ const HomePage = () => {
   //   dispatch(getFilms(URLS.awaitFilms));
   // }, []);
 
-  return  (
+  return (
     <main className="page-main outer-wrapper">
       {/* <SwiperList films={filmsList}/> */}
     </main>
