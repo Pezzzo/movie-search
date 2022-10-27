@@ -3,7 +3,7 @@ import { useSelectors } from '../../hooks/useSelectors';
 import { Navigation, Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { ImgModal } from './img-modal';
-import { openModal } from '../../util/util';
+import { openModalHandler } from '../../handlers/handlers';
 
 const Stills = () => {
 
@@ -19,6 +19,10 @@ const Stills = () => {
         modules={[Navigation, Pagination]}
         spaceBetween={50}
         slidesPerView={3}
+        initialSlide={0}
+        pagination={{
+          type: "progressbar",
+        }}
         centeredSlides={true}
         loop
         navigation
@@ -27,7 +31,7 @@ const Stills = () => {
           <SwiperSlide
             key={index}
             className="swiper-slide swiper-slide--stills"
-            onClick={() => openModal(setModalActive)}>
+            onClick={() => openModalHandler(setModalActive(true))}>
             <img
             onClick={() => setImgSrc(imageUrl)}
             className="stills__item-img"

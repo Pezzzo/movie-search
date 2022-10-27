@@ -4,7 +4,7 @@ const initialState = {
   seasons: '',
 };
 
-export const getSeasonsCount = createAction('ACTORS');
+export const getSeasonsCount = createAction('SEASONS');
 
 const seasonsReducer = createReducer(initialState, {
   [getSeasonsCount]: (state, action) => {

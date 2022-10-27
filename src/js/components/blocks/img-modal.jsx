@@ -1,27 +1,28 @@
 import React, { useEffect } from 'react';
-import { closeModal, closeModalKey } from '../../util/util';
+import { closeModalKeyHandler, closeModalMouseHandler } from '../../handlers/handlers';
+
 
 const ImgModal = ({ setActive, src }) => {
 
-  const closeModalKeyHandler = (evt) => {
-    closeModalKey(evt);
+  const closeModalWindowKey = (evt) => {
+    closeModalKeyHandler(evt);
     setActive(false);
   };
 
   useEffect(() => {
-    window.addEventListener('keydown', closeModalKeyHandler);
+    window.addEventListener('keydown', closeModalWindowKey);
 
     return () => {
-      window.removeEventListener('keydown', closeModalKeyHandler);
+      window.removeEventListener('keydown', closeModalWindowKey);
     }
   }, [])
 
   return (
-    <div className="modal" onClick={() => setActive(false)}>
+    <div className="modal" onClick={() => closeModalMouseHandler(setActive(false))}>
       <img className="modal-popup__img" src={src} width="300" alt="still" onClick={(e) => e.stopPropagation()} />
       <button
         className="modal-popup__close-button"
-        onClick={() => closeModal(setActive)}>
+        onClick={() => closeModalMouseHandler(setActive(false))}>
         ×</button>
     </div>
   );

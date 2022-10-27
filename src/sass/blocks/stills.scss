@@ -1,36 +1,9 @@
-.stills__list {
-  margin: 0 auto;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  align-items: center;
-  height: 100px;
-  max-width: 600px;
-  overflow: hidden;
-}
-
-.stills__item {
-  margin: 4px 10px 20px 0;
+.stills {
+  margin-bottom: 40px;
 }
 
 .stills__item-img {
-
   align-self: end;
-max-height: 240px;
+  max-height: 240px;
   object-fit: contain;
-}
-
-.stills__item-link {
-  max-width: 100px;
-  color: $yellow;
-  margin: 0 auto;
-  margin-top: 10px;
-  margin-bottom: 50px;
-  cursor: pointer;
-  transition: 0.5s;
-
-  &:hover {
-    color: $yellow-hover;
-  }
 }

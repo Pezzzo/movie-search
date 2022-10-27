@@ -1,11 +1,11 @@
 import React from 'react';
-import { scrollUp } from '../../util/util';
+import { buttonScrollUpHandler } from '../../handlers/handlers';
 
 const GoUpButton = () => {
   return (
     <>
       <button
-        onClick={scrollUp}
+        onClick={buttonScrollUpHandler}
         className="page-footer__button-up"
         type="button">
         ↑</button>

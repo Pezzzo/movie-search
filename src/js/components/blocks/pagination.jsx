@@ -1,26 +1,30 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 import { paginationLinkHandler } from '../../handlers/handlers';
+import { setPaginationStateOnClick, setPaginationStateOnload } from '../../handlers/pagination';
 import { setNumberPage } from '../../store/reducers/pagination-reducer';
 import { PaginationLink } from '../ui/paginationLink-link';
 
 const Pagination = ({ pageCount }) => {
 
   const dispatch = useDispatch();
-
   const location = useLocation();
-
   const numOfPages = [];
 
   for (let i = 1; i <= pageCount; i++) {
     numOfPages.push(i);
   }
 
+  useEffect(() => {
+    setPaginationStateOnClick();
+    setPaginationStateOnload();
+  }, []);
+
   return (
     <section className="pagination">
-      <button className="pagination__button pagination__button-start" type="button" disabled>«</button>
-      <button className="pagination__button pagination__button-prev" type="button" disabled>‹</button>
+      <button className="pagination__button pagination__button-start" type="button">«</button>
+      <button className="pagination__button pagination__button-prev" type="button">‹</button>
       <div className="pagination-wrapper">
         <div className="pagination-inner-wrapper">
           <ul className="pagination__list">
@@ -30,7 +34,6 @@ const Pagination = ({ pageCount }) => {
                   onClick={() => dispatch(setNumberPage(item))}
                   to={paginationLinkHandler(location, item)}
                   className="pagination__link"
-                  data-movies-id="${i}"
                 >{item}
                 </PaginationLink>
               </li>

@@ -6,11 +6,11 @@ const ActorsPreview = () => {
 
   const { actorsList, id } = useSelectors();
 
-  const staff = [];
+  const staffArr = [];
 
   for (let i = 0; i < actorsList.length; i++) {
-    if (staff.length <= 9) {
-      staff.push(actorsList[i]);
+    if (staffArr.length <= 9) {
+      staffArr.push(actorsList[i]);
     }
   }
 
@@ -18,7 +18,7 @@ const ActorsPreview = () => {
     <div className="actors-preview">
       <h2>Создатели, актёры:</h2>
       <ul className="actors-preview__list">
-        {staff.map((item, index) => (
+        {staffArr.map((item, index) => (
           <li
             className="actors-preview__item"
             key={index}>

@@ -1,7 +1,7 @@
 // const API_KEY = '8016fba8-eb34-412d-831d-71e9316c1569';
 // const API_KEY = 'af7c9b5d-d938-441b-90e6-5e21ab4f4433';
-const API_KEY = '602dd412-6dcf-4106-b093-de836da7aaf6';
-// const API_KEY = '2dcf472a-21e6-4742-b902-5796a587e6dd';
+// const API_KEY = '602dd412-6dcf-4106-b093-de836da7aaf6';
+const API_KEY = '2dcf472a-21e6-4742-b902-5796a587e6dd';
 
 import axios from 'axios';
 import { getFilmsList } from '../store/reducers/films-list-reducer';
@@ -80,6 +80,7 @@ const getActors = (url) => {
       });
 
       dispatch(getActorsList(response.data));
+      console.log(response.data)
       dispatch(fetchSuccess());
 
     } catch (e) {

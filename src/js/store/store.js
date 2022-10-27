@@ -8,6 +8,7 @@ import { actorsListReducer } from "./reducers/actors-list-reducer";
 import { stillsListReducer } from "./reducers/stills-list-reducer";
 import { similarListReducer } from "./reducers/similar-films-reducer";
 import { seasonsReducer } from "./reducers/seasons-reducer";
+import { rangePaginationCountReducer } from "./reducers/range-counter-reducer";
 
 
 const rootReducer = combineReducers({
@@ -19,7 +20,8 @@ const rootReducer = combineReducers({
   actors: actorsListReducer,
   stills: stillsListReducer,
   similar: similarListReducer,
-  seasons: seasonsReducer
+  seasons: seasonsReducer,
+  rangeCount: rangePaginationCountReducer
 });
 
 const saveToLocalStorage = (state) => {

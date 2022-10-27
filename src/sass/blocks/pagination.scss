@@ -32,17 +32,22 @@
   margin-right: 1px;
 }
 
+.pagination__button {
+  border: none;
+  cursor: pointer;
+}
+
 .pagination__link,
 .pagination__button {
-  min-width: 50px;
-  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
+  min-width: 50px;
+  height: 40px;
+  color: $white;
   font-size: 26px;
   background-color: $bg;
-  color: $white;
+  cursor: pointer;
   transition: 0.3s;
 }
 
@@ -53,26 +58,20 @@
   }
 }
 
-
 .pagination__link:active,
 .pagination__button:active {
   background-color: $beige-opacity-10;
 }
 
-.pagination__link--active:hover,
-.pagination__link--active {
+.pagination__link--active,
+.pagination__link--active:hover {
   background-color: $yellow;
   cursor: auto;
 }
 
-.pagination__button {
-  cursor: pointer;
-  border: none;
-}
-
 .pagination__button:disabled {
-  pointer-events: none;
   opacity: 0.1;
+  pointer-events: none;
 }
 
 .display-none {

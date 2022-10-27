@@ -12,10 +12,9 @@ import { Stills } from '../blocks/stills';
 const MoviePage = () => {
 
   const dispatch = useDispatch();
-  const { loading, details } = useSelectors();
+  const { loading } = useSelectors();
   const params = useParams();
 
-// console.log(details)
   useEffect(() => {
     dispatch(getMovie(`${URLS.filmId}${params.id}`));
     dispatch(getStills(`${URLS.filmStills}${params.id}/images?type=STILL&page=1`));

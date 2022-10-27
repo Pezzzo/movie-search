@@ -1,11 +1,3 @@
-// автоматический скрол наверх
-const scrollUp = () => {
-  window.scrollTo({
-    top: 0,
-    behavior: 'smooth',
-  });
-};
-
 const pagePreloader = () => {
   setTimeout(() => {
     const preloader = document.querySelector('.preloader');
@@ -14,7 +6,7 @@ const pagePreloader = () => {
 };
 
 
-const goUp = (cb, trueValue, falseValue) => {
+const setButtonUpVisibility = (cb, trueValue, falseValue) => {
 
   window.addEventListener('scroll', () => {
     if (window.scrollY > 400) {
@@ -50,6 +42,10 @@ const setActiveClass = (location) => {
   }
 };
 
+const enableScrolling = () => {
+  window.onscroll = () => { };
+};
+
 const disableScrolling = () => {
   let x = window.scrollX;
   let y = window.scrollY;
@@ -58,27 +54,18 @@ const disableScrolling = () => {
   };
 };
 
-const enableScrolling = () => {
-  window.onscroll = () => { };
-};
-
-const openModal = (cb) => {
-  cb(true);
-  disableScrolling();
-};
-
-const closeModal = (cb) => {
-  cb(false);
-  enableScrolling();
+const getArrRenderedPaginationLinks = (array, range, part) => {
+  let start = range * (part - 1);
+  let end = (range * part);
+  return array.slice(start, end);
 };
 
 
-const closeModalKey = (evt) => {
-  if (evt.key === 'Esc' || evt.key === 'Escape') {
-    evt.preventDefault();
-    enableScrolling();
-  }
-};
-
-export { goUp, pagePreloader, scrollUp, setActiveClass, openModal, closeModal, closeModalKey };
+export {
+  setButtonUpVisibility,
+  pagePreloader,
+  setActiveClass,
+  enableScrolling,
+  disableScrolling,
+  getArrRenderedPaginationLinks };
 

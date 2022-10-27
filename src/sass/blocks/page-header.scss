@@ -1,30 +1,28 @@
 .page-header {
   position: fixed;
-  min-width: 100%;
-
-  background-color: $bg;
-  min-height: 120px;
-;
   z-index: 2;
+  min-width: 100%;
+  min-height: 120px;
   padding-top: 20px;
+  background-color: $bg;
 
   @media (min-width: $tablet) {
-    padding-bottom: 20px;
     padding-top: 40px;
+    padding-bottom: 20px;
   }
 }
 
 .page-header__wrapper {
-  margin: 0 auto;
-  max-width: 1440px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  justify-items: center
+  justify-items: center;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
 .page-header__logo {
-  background-color: $black-opacity-0;
   width: 200px;
+  background-color: $black-opacity-0;
 }
 
 .page-header__forms {

@@ -11,6 +11,7 @@ const useSelectors = () => {
   const stillsList = useSelector(state => state.stills.stills);
   const similarList = useSelector(state => state.similar.similar);
   const seasons = useSelector(state => state.seasons.seasons);
+  const rangeCount = useSelector(state => state.rangeCount.rangeCount);
 
   return {
     filmsList,
@@ -25,7 +26,8 @@ const useSelectors = () => {
     similarList,
     countries,
     genres,
-    seasons
+    seasons,
+    rangeCount
   }
 };
 
