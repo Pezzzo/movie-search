@@ -44,3 +44,20 @@ img {
 .error {
   padding-top: 200px;
 }
+
+.kinopoisk-link {
+  display: block;
+  max-width: 140px;
+  padding: 20px 0;
+  color: $yellow;
+  font-size: 26px;
+  transition: 0.5s;
+
+  &:hover {
+    color: $yellow-hover;
+  }
+
+  span {
+    font-size: 14px;
+  }
+}

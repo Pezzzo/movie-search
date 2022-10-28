@@ -5,7 +5,7 @@
   margin-left: 20px;
   background-color: $yellow-hover;
   opacity: 0.4;
-    transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 
   &:hover {
     opacity: 0.7;
@@ -13,9 +13,9 @@
 }
 
 .swiper-pagination-bullet-active {
-  opacity: 1;
   background-color: $yellow-hover;
   box-shadow: 0 0 8px 4px $yellow;
+  opacity: 1;
 }
 
 .swiper {
@@ -26,27 +26,28 @@
   width: 100px;
   padding-top: 40px;
   padding-bottom: 120px;
-  opacity: 0.1;
   cursor: auto;
+  opacity: 0.1;
   pointer-events: none;
+
   &--stills {
     padding: 0;
-
   }
 }
 
 .swiper-slide-active {
-  opacity: 1;
   cursor: pointer;
+  opacity: 1;
   pointer-events: auto;
 }
 
 .swiper__wrapper {
-  margin: 0 auto;
-  max-width: 800px;
   display: flex;
   align-items: center;
   justify-content: center;
+  max-width: 800px;
+  margin: 0 auto;
+  padding-top: 20px;
 }
 
 .swiper-wrapper {
@@ -63,9 +64,9 @@
 
 .swiper-button-next,
 .swiper-button-prev {
+  z-index: 111;
   width: 60px;
   height: 60px;
-  z-index: 111;
   color: $white;
   transition: all 0.3s ease-in-out;
 
@@ -80,21 +81,18 @@
 }
 
 .swiper__item-img {
-  object-fit: contain;
   margin-right: 40px;
+  object-fit: contain;
 }
 
 .swiper__title {
   font-size: 36px;
-  // margin-bottom: 10px;
 }
 
 .swiper__date {
   font-size: 22px;
-  // @include margin-y(30px, 0);
 }
 
 .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
   background: $yellow;
 }
-

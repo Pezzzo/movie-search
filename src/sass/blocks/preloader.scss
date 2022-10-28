@@ -19,7 +19,7 @@
   width: 60px;
   height: 60px;
   transform: translate(-50%, -50%);
-  // animation: 1s spin infinite linear;
+  animation: 1s spin infinite linear;
 }
 
 .done {
@@ -27,12 +27,12 @@
   opacity: 0;
 }
 
-// @keyframes spin {
-//   from {
-//     transform: translate(-50%, -50%) rotate(0deg);
-//   }
+@keyframes spin {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
 
-//   to {
-//     transform: translate(-50%, -50%) rotate(360deg);
-//   }
-// }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}

@@ -1,3 +1,5 @@
+/* stylelint-disable prettier/prettier */
+/* stylelint-disable import-notation */
 // Globals
 @import "normalise/normalise.scss";
 @import "variables/variables.scss";
@@ -10,10 +12,12 @@
 @import "blocks/preloader.scss";
 @import "blocks/page.scss";
 @import "blocks/movies-catalog.scss";
+@import "blocks/movie.scss";
 @import "blocks/actors-preview.scss";
 @import "blocks/actors.scss";
 @import "blocks/similar.scss";
 @import "blocks/stills.scss";
+@import "blocks/personality.scss";
 @import "blocks/modal.scss";
 @import "blocks/page-main.scss";
 @import "blocks/page-header.scss";

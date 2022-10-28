@@ -20,8 +20,8 @@ const PopularPage = () => {
 
   return loading ? <Preloader /> : (
     <main className="page-main outer-wrapper">
-      <Pagination pageCount={pageCount} />
       <FilmsList data={filmsList} />
+      <Pagination pageCount={pageCount} />
     </main>
   );
 }

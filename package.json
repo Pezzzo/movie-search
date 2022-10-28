@@ -46,6 +46,7 @@
     "react-dom": "^18.2.0",
     "react-redux": "^8.0.4",
     "react-router-dom": "^6.4.2",
+    "redux-saga": "^1.2.1",
     "stylelint-config-rational-order": "^0.1.2",
     "stylelint-order": "^5.0.0",
     "stylelint-scss": "^4.3.0",

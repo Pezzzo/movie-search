@@ -1,7 +1,7 @@
 .actors-preview {
   min-width: 150px;
-  height: 300px;
-  overflow: hidden;
+  min-height: 300px;
+  color: $white;
   text-align: left;
 
   @media (min-width: $desktop-1024) {
@@ -10,15 +10,36 @@
 }
 
 .actors-preview__list {
-  max-height: 200px;
+  min-height: 200px;
   margin: 0;
   margin-bottom: 10px;
   padding: 0;
+}
+
+.actors-preview__info-wrapper {
+  position: absolute;
+  top: 0;
+  left: -160px;
+  display: none;
+  max-width: 200px;
+  background-color: $bg;
+}
+
+.actors-preview__item-img {
+  margin-right: 10px;
   overflow: hidden;
+  border-radius: 10px;
 }
 
 .actors-preview__actor {
+  position: relative;
   margin: 0;
+  color: $white;
+
+  &:hover .actors-preview__info-wrapper {
+    display: flex;
+    align-items: center;
+  }
 }
 
 .actors-preview__actor-link {

@@ -34,6 +34,14 @@
   line-height: 20px;
   background-color: $bg;
 
+  @media (min-width: $tablet) {
+    font-size: 16px;
+  }
+
+  @media (min-width: $desktop-1280) {
+    font-size: 18px;
+  }
+
   li {
     list-style: none;
   }

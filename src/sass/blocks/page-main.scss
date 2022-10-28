@@ -1,5 +1,9 @@
 .page-main {
   flex: 1 1 auto;
   margin-bottom: 100px;
-  padding-top: 150px;
+  padding-top: 180px;
+
+  @media (min-width: $tablet) {
+    margin-bottom: 150px;
+  }
 }

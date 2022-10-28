@@ -5,7 +5,6 @@ const pagePreloader = () => {
   }, 100);
 };
 
-
 const setButtonUpVisibility = (cb, trueValue, falseValue) => {
 
   window.addEventListener('scroll', () => {
@@ -16,7 +15,6 @@ const setButtonUpVisibility = (cb, trueValue, falseValue) => {
     }
   });
 };
-
 
 const setActiveClass = (location) => {
 
@@ -35,7 +33,12 @@ const setActiveClass = (location) => {
   if (location.includes('popular')) {
     document.querySelector('.page-nav__link-popular').classList.add('page-nav__link--active');
   }
-  if (location.includes('movie') || location.includes('actors')) {
+  if (
+    location.includes('movie') ||
+    location.includes('actors') ||
+    location.includes('personality') ||
+    location.includes('search')
+  ) {
     links.forEach((e) => {
       e.classList.remove('page-nav__link--active');
     });
@@ -60,6 +63,16 @@ const getArrRenderedPaginationLinks = (array, range, part) => {
   return array.slice(start, end);
 };
 
+const requestOptions = (url, key) => {
+  return {
+    method: 'get',
+    url: url,
+    headers: {
+      "Content-Type": "application/json",
+      "X-API-KEY": key,
+    },
+  }
+};
 
 export {
   setButtonUpVisibility,
@@ -67,5 +80,7 @@ export {
   setActiveClass,
   enableScrolling,
   disableScrolling,
-  getArrRenderedPaginationLinks };
+  getArrRenderedPaginationLinks,
+  requestOptions
+};
 

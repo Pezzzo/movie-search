@@ -3,27 +3,23 @@ import { useDispatch } from 'react-redux';
 import { getFilms } from '../../fetch/fetch';
 import { useSelectors } from '../../hooks/useSelectors';
 import { URLS } from '../../url/url';
-import { Pagination } from '../blocks/pagination';
 import { Preloader } from '../blocks/preloader';
 import { FilmsList } from '../blocks/films-list';
-import { useParams } from 'react-router-dom';
 
-const Top250Page = () => {
+const SearchPage = () => {
 
-  const { filmsList, pageCount, loading } = useSelectors();
+  const { filmsList, loading, inputValue } = useSelectors();
   const dispatch = useDispatch();
-  const params = useParams();
 
   useEffect(() => {
-    dispatch(getFilms(`${URLS.top250}${params.id}`));
-  }, [params.id]);
+    dispatch(getFilms(`${URLS.keywordSearch}${inputValue}&page=1`));
+  }, [inputValue]);
 
   return loading ? <Preloader /> : (
     <main className="page-main outer-wrapper">
       <FilmsList data={filmsList} />
-      <Pagination pageCount={pageCount} />
     </main>
   );
 }
 
-export { Top250Page };
+export { SearchPage };

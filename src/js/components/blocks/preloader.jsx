@@ -6,8 +6,7 @@ const Preloader = () => {
     <main className="page-main outer-wrapper">
       <div className="preloader">
         <div className="preloader__loader">
-          <p>Загрузка...</p>
-          {/* <img src="img/refresh-icon.png" alt="иконка загрузки" /> */}
+          <img src="img/refresh-icon.png" alt="иконка загрузки" />
         </div>
       </div>
     </main>

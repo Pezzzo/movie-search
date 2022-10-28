@@ -40,11 +40,14 @@ const closeModalKeyHandler = (evt) => {
   }
 };
 
+
+
 export {
   paginationLinkHandler,
   navLinkHandler,
   buttonScrollUpHandler,
   openModalHandler,
   closeModalMouseHandler,
-  closeModalKeyHandler
+  closeModalKeyHandler,
+
 };

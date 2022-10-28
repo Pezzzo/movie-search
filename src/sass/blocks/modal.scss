@@ -12,7 +12,7 @@
   justify-content: center;
   width: 100vw;
   height: 100vh;
-  background-color: rgb(0 0 0 / 90%);
+  background-color: rgb(0 0 0 / 95%);
 }
 
 .modal-popup__img {
@@ -44,9 +44,4 @@
   &:active {
     opacity: 0.5;
   }
-
-  // @media (min-width: $tablet) {
-  //   right: -60px;
-  //   top: 0;
-  // }
 }

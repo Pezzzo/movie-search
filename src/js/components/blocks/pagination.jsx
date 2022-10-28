@@ -3,11 +3,12 @@ import { useDispatch } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 import { paginationLinkHandler } from '../../handlers/handlers';
 import { setPaginationStateOnClick, setPaginationStateOnload } from '../../handlers/pagination';
+import { useSelectors } from '../../hooks/useSelectors';
 import { setNumberPage } from '../../store/reducers/pagination-reducer';
 import { PaginationLink } from '../ui/paginationLink-link';
 
-const Pagination = ({ pageCount }) => {
-
+const Pagination = () => {
+  const { pageCount } = useSelectors();
   const dispatch = useDispatch();
   const location = useLocation();
   const numOfPages = [];
@@ -19,7 +20,7 @@ const Pagination = ({ pageCount }) => {
   useEffect(() => {
     setPaginationStateOnClick();
     setPaginationStateOnload();
-  }, []);
+  }, [pageCount]);
 
   return (
     <section className="pagination">
