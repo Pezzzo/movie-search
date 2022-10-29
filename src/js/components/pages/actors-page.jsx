@@ -1,18 +1,19 @@
 import React from 'react';
 import { useSelectors } from '../../hooks/useSelectors';
 import { Actors } from '../blocks/actors';
-import { Preloader } from '../blocks/preloader';
+import { Error } from '../blocks/error';
+import { Main } from '../layout/main';
 
 const ActorsPage = () => {
 
-  const { actorsList, loading } = useSelectors();
+  const { actorsList, loading, error } = useSelectors();
 
-  return loading ? <Preloader /> : (
-    <main className="page-main outer-wrapper">
+  return error ? <Error error={error} /> : (
+    <Main loading={loading}>
       <div className="inner-wrapper">
         <Actors actors={actorsList} />
       </div>
-    </main>
+    </Main>
   );
 }
 

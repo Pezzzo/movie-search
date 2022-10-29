@@ -4,15 +4,16 @@ import { useParams } from 'react-router-dom';
 import { getMovieData } from '../../fetch/fetch';
 import { useSelectors } from '../../hooks/useSelectors';
 import { URLS } from '../../url/url';
+import { Error } from '../blocks/error';
 import { Movie } from '../blocks/movie';
-import { Preloader } from '../blocks/preloader';
 import { SimilarFilms } from '../blocks/similar-films';
 import { Stills } from '../blocks/stills';
+import { Main } from '../layout/main';
 
 const MoviePage = () => {
 
   const dispatch = useDispatch();
-  const { loading } = useSelectors();
+  const { loading, error } = useSelectors();
   const params = useParams();
 
   useEffect(() => {
@@ -25,14 +26,14 @@ const MoviePage = () => {
     ));
   }, [params.id]);
 
-  return loading ? <Preloader /> : (
-    <main className="page-main outer-wrapper">
+  return error ? <Error error={error} /> : (
+    <Main loading={loading}>
       <div className="inner-wrapper">
         <Movie />
         <Stills />
         <SimilarFilms />
       </div>
-    </main>
+    </Main>
   );
 }
 

@@ -23,11 +23,14 @@ const ActorsPreview = () => {
             className="actors-preview__item"
             key={index}>
             <Link
-            className="actors-preview__actor"
-            to={`/personality=${staffId}`}>
+              className="actors-preview__actor"
+              to={`/personality=${staffId}`}>
               <span>{nameRu}</span>
               <div className="actors-preview__info-wrapper">
-                <img className="actors-preview__item-img" src={posterUrl} width="60" alt="movie" />
+                <img
+                  className="actors-preview__item-img"
+                  src={posterUrl} width="60"
+                  alt="movie" />
                 <p className="actors__character">{professionText.slice(0, -1)}</p>
               </div>
 
@@ -35,7 +38,11 @@ const ActorsPreview = () => {
           </li>
         ))}
       </ul>
-      <Link className="actors-preview__actor-link" to={`/movie=${id}=actors`}>Показать ещё</Link>
+      <Link
+        className="actors-preview__actor-link"
+        to={`/movie=${id}=actors`}>
+        Показать ещё
+      </Link>
     </div>
   );
 }

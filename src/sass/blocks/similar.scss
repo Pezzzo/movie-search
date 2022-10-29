@@ -26,16 +26,17 @@
   width: 140px;
   height: 210px;
   color: $white;
-  background: $black-opacity-60;
+  background: $black-opacity-80;
 
   @media (min-width: $tablet) {
+    background: $black-opacity-60;
     top: 210px;
     visibility: hidden;
   }
 }
 
 .similar__item-img {
-  background-color: aliceblue;
+  background-color: $white;
   cursor: pointer;
 }
 

@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Actors = ({ actors }) => {
-
   return (
     <div className="actors ">
       <h2>Создатели:</h2>

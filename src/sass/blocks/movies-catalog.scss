@@ -51,6 +51,10 @@
   max-width: 280px;
   margin-top: 10px;
   margin-bottom: 0;
+
+  @media (min-width: $tablet) {
+    @include margin-y(10px, 10px);
+  }
 }
 
 .movies-catalog__date {

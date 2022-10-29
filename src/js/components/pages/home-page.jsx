@@ -3,24 +3,25 @@ import { useDispatch } from 'react-redux';
 import { getFilms } from '../../fetch/fetch';
 import { useSelectors } from '../../hooks/useSelectors';
 import { URLS } from '../../url/url';
-import { Preloader } from '../blocks/preloader';
+import { Error } from '../blocks/error';
 import { SwiperList } from '../blocks/swiper';
+import { Main } from '../layout/main';
 
 const HomePage = () => {
 
-  // const { filmsList, loading } = useSelectors();
-  // const dispatch = useDispatch();
+  const { filmsList, error, loading } = useSelectors();
+  const dispatch = useDispatch();
 
+  useEffect(() => {
+    dispatch(getFilms(URLS.awaitFilms));
+  }, [dispatch]);
 
-
-  // useEffect(() => {
-  //   dispatch(getFilms(URLS.awaitFilms));
-  // }, []);
-
-  return (
-    <main className="page-main outer-wrapper">
-      {/* <SwiperList films={filmsList}/> */}
-    </main>
+  return error ? <Error error={error} /> : (
+    <Main loading={loading}>
+      <div className="inner-wrapper">
+        <SwiperList films={filmsList} />
+      </div>
+    </Main>
   );
 }
 export { HomePage };

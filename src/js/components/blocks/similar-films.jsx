@@ -11,7 +11,7 @@ const SimilarFilms = () => {
   const dispatch = useDispatch();
   const { similarList } = useSelectors();
 
-  return (
+  return similarList.length > 0 ? (
     <div className="similar">
       <h2>Похожие фильмы</h2>
       <ul className="similar__list">
@@ -30,7 +30,7 @@ const SimilarFilms = () => {
         ))}
       </ul>
     </div>
-  );
+  ) : '';
 }
 
 export { SimilarFilms };

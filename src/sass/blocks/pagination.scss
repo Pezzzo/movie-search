@@ -2,6 +2,7 @@
   position: relative;
   display: flex;
   justify-content: center;
+  margin-bottom: 160px;
 
   @media (min-width: $tablet) {
     margin-bottom: 40px;
@@ -31,11 +32,6 @@
   margin-right: 1px;
 }
 
-.pagination__button {
-  border: none;
-  cursor: pointer;
-}
-
 .pagination__link,
 .pagination__button {
   display: flex;
@@ -44,10 +40,24 @@
   min-width: 50px;
   height: 40px;
   color: $white;
-  font-size: 26px;
+  font-size: 20px;
   background-color: $bg;
   cursor: pointer;
   transition: 0.3s;
+
+  @media (min-width: $tablet) {
+    font-size: 26px;
+  }
+}
+
+.pagination__button {
+  font-size: 30px;
+  border: none;
+  cursor: pointer;
+
+  @media (min-width: $tablet) {
+    font-size: 36px;
+  }
 }
 
 @media (min-width: $tablet) {

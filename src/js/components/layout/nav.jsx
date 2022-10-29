@@ -2,10 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { navLinkHandler } from '../../handlers/handlers';
 
-const Nav = () => {
+const Nav = ({visible}) => {
 
   return (
-    <nav className="page-nav">
+    <nav className={visible ? "page-nav" : "page-nav page-nav--active"}>
       <ul className="page-nav__list">
         <li className="page-nav__item">
           <Link

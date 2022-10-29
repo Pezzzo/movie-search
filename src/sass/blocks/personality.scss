@@ -15,8 +15,11 @@
 }
 
 .personality__img-wrapper {
-  margin-right: 40px;
   text-align: center;
+
+  @media (min-width: $tablet) {
+    margin-right: 40px;
+  }
 }
 
 .personality__img {

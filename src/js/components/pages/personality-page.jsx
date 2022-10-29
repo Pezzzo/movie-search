@@ -4,20 +4,21 @@ import { useParams } from 'react-router-dom';
 import { getPersonality } from '../../fetch/fetch';
 import { useSelectors } from '../../hooks/useSelectors';
 import { URLS } from '../../url/url';
-import { Preloader } from '../blocks/preloader';
+import { Error } from '../blocks/error';
+import { Main } from '../layout/main';
 
 const PersonalityPage = () => {
 
   const dispatch = useDispatch();
-  const { loading, personalityInfo, personalityInfoFacts, personalityInfoFilms } = useSelectors();
+  const { loading, error, personalityInfo, personalityInfoFacts, personalityInfoFilms } = useSelectors();
   const params = useParams();
 
   useEffect(() => {
     dispatch(getPersonality(`${URLS.personality}${params.id}`));
   }, [params.id]);
 
-  return loading ? <Preloader /> : (
-    <main className="page-main outer-wrapper">
+  return error ? <Error error={error} /> : (
+    <Main loading={loading}>
       <div className="inner-wrapper personality">
         <div className="personality__wrapper">
           <div className="personality__img-wrapper">
@@ -31,14 +32,14 @@ const PersonalityPage = () => {
           <div className="personality__info-wrapper">
             <h2 className="personality__subtitle personality__subtitle--nameru">{personalityInfo.nameRu}</h2>
             <h2 className="personality__subtitle personality__subtitle--nameen">{personalityInfo.nameEn}</h2>
-            <h2 className="personality__subtitle">Возраст: <span  className="personality__description">{personalityInfo.age}</span></h2>
-            <h2 className="personality__subtitle">Карьера: <span  className="personality__description">{personalityInfo.profession}</span></h2>
-            <h2 className="personality__subtitle">День рождения: <span  className="personality__description">{personalityInfo.birthday}</span></h2>
-            <h2 className="personality__subtitle">Место рождения: <span  className="personality__description">{personalityInfo.birthplace}</span></h2>
-            <h2 className="personality__subtitle">Награды: <span  className="personality__description">{personalityInfo.hasAwards}</span></h2>
-            <h2 className="personality__subtitle">Фильмы: <span  className="personality__description">{personalityInfoFilms.length}</span></h2>
-            {personalityInfo.death !== null ? <h2  className="personality__subtitle">Дата смерти: <span  className="personality__description">{personalityInfo.death}</span></h2> : ''}
-            {personalityInfo.death !== null ? <h2  className="personality__subtitle">Место смерти: <span  className="personality__description">{personalityInfo.deathplace}</span></h2> : ''}
+            <p className="personality__subtitle">Возраст: <span  className="personality__description">{personalityInfo.age}</span></p>
+            <p className="personality__subtitle">Карьера: <span  className="personality__description">{personalityInfo.profession}</span></p>
+            <p className="personality__subtitle">День рождения: <span  className="personality__description">{personalityInfo.birthday}</span></p>
+            <p className="personality__subtitle">Место рождения: <span  className="personality__description">{personalityInfo.birthplace}</span></p>
+            <p className="personality__subtitle">Награды: <span  className="personality__description">{personalityInfo.hasAwards}</span></p>
+            <p className="personality__subtitle">Фильмы: <span  className="personality__description">{personalityInfoFilms.length}</span></p>
+            {personalityInfo.death !== null ? <p  className="personality__subtitle">Дата смерти: <span  className="personality__description">{personalityInfo.death}</span></p> : ''}
+            {personalityInfo.death !== null ? <p  className="personality__subtitle">Место смерти: <span  className="personality__description">{personalityInfo.deathplace}</span></p> : ''}
             <a className="kinopoisk-link" href={personalityInfo.webUrl} target="_blank" rel="noopener noreferrer"><span>подробнее на </span>Кинопоиск</a>
             <ul className="personality__list">
               {personalityInfoFacts.map((fact, index) => (
@@ -50,7 +51,7 @@ const PersonalityPage = () => {
 
         </div>
       </div>
-    </main>
+    </Main>
   );
 }
 

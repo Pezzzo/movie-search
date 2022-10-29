@@ -1,6 +1,10 @@
 .form {
   display: flex;
-  flex-wrap: wrap;
+  margin: 0 auto;
+
+  @media (min-width: $tablet) {
+    margin-left: 20px;
+  }
 }
 
 .form__button {
@@ -31,7 +35,7 @@
 
 .form__button-submit {
   min-width: 70px;
-  padding: 10px 0;
+  padding: 6px 0;
   color: $white;
   font-size: 18px;
   background-color: $bg;
@@ -48,20 +52,16 @@
 
 .form__input::placeholder {
   color: $black-opacity-20;
+  font-size: 16px;
 }
 
-.form__input,
-.form__select {
-  width: 200px;
+.form__input {
+  width: 140px;
   font-size: 16px;
   line-height: 30px;
   border: none;
   outline: none;
   transition: 0.5s;
-
-  @media (min-width: $tablet) {
-    font-size: 20px;
-  }
 
   &:focus,
   &:hover {

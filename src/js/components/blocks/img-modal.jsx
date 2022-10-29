@@ -19,9 +19,9 @@ const ImgModal = ({ setActive, src }) => {
 
   return (
     <div className="modal" onClick={() => closeModalMouseHandler(setActive(false))}>
-      <img className="modal-popup__img" src={src} width="300" alt="still" onClick={(e) => e.stopPropagation()} />
+      <img className="modal__img" src={src} width="300" alt="still" onClick={(e) => e.stopPropagation()} />
       <button
-        className="modal-popup__close-button"
+        className="modal__close-button"
         onClick={() => closeModalMouseHandler(setActive(false))}>
         ×</button>
     </div>

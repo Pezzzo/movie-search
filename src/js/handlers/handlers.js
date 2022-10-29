@@ -40,7 +40,20 @@ const closeModalKeyHandler = (evt) => {
   }
 };
 
-
+const setImgSlidesCount = (cb, trueValue, falseValue) => {
+  window.addEventListener('resize', () => {
+    if (window.matchMedia('screen and (min-width: 768px)').matches) {
+      cb(trueValue);
+    }    else {
+      cb(falseValue);
+    }
+  });
+  if (window.matchMedia('screen and (min-width: 768px)').matches) {
+    cb(trueValue);
+  }    else {
+    cb(falseValue);
+  }
+};
 
 export {
   paginationLinkHandler,
@@ -49,5 +62,5 @@ export {
   openModalHandler,
   closeModalMouseHandler,
   closeModalKeyHandler,
-
+  setImgSlidesCount
 };

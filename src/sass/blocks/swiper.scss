@@ -24,7 +24,8 @@
 
 .swiper-slide {
   width: 100px;
-  padding-top: 40px;
+  height: 100%;
+  margin-top: 40px;
   padding-bottom: 120px;
   cursor: auto;
   opacity: 0.1;
@@ -32,6 +33,11 @@
 
   &--stills {
     padding: 0;
+  }
+
+  &--home {
+    margin-top: 0;
+    padding-bottom: 60px;
   }
 }
 
@@ -43,23 +49,42 @@
 
 .swiper__wrapper {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
   max-width: 800px;
   margin: 0 auto;
-  padding-top: 20px;
+
+  @media (min-width: $desktop-1280) {
+    flex-direction: row;
+  }
 }
 
 .swiper-wrapper {
-  align-items: center;
+  align-items: start;
+
+  @media (min-width: $tablet) {
+    align-items: center;
+  }
 }
 
 .swiper-button-next {
-  margin-right: 80px;
+  margin-right: -26px;
+
+  &--home {
+    top: 20px;
+  }
+
+  @media (min-width: $tablet) {
+    margin-right: 60px;
+  }
 }
 
 .swiper-button-prev {
-  margin-left: 80px;
+  margin-left: -26px;
+
+  @media (min-width: $tablet) {
+    margin-left: 60px;
+  }
 }
 
 .swiper-button-next,
@@ -73,26 +98,80 @@
   &:hover {
     color: $yellow-hover;
   }
-}
 
-.swiper-button {
-  position: absolute;
-  top: 40%;
+  @media (max-width: $tablet) {
+    &::after {
+      font-size: 20px;
+    }
+  }
 }
 
 .swiper__item-img {
-  margin-right: 40px;
-  object-fit: contain;
+  width: 220px;
+  height: 325px;
+  object-fit: cover;
+
+  @media (min-width: $tablet) {
+    width: 400px;
+    height: 592px;
+    margin-right: 40px;
+  }
+}
+
+.swiper__descroption {
+  p {
+    color: $white-opacity-60;
+  }
+
+  .swiper__rating {
+    margin: 0;
+    color: $yellow;
+    font-size: 30px;
+  }
+
+  @media (max-width: $desktop-1280) {
+    text-align: center;
+  }
+}
+
+.swiper__rating-text {
+  margin-top: 4px;
 }
 
 .swiper__title {
-  font-size: 36px;
+  font-size: 34px;
+  line-height: 110%;
+  @include margin-y(10px, 10px);
+
+  @media (min-width: $desktop-1280) {
+    font-size: 46px;
+  }
 }
 
 .swiper__date {
   font-size: 22px;
+  line-height: 110%;
+
+  @media (min-width: $desktop-1280) {
+    font-size: 18px;
+  }
+}
+
+.swiper__descroption-text {
+  @media (min-width: $desktop-1280) {
+    font-size: 18px;
+  }
+}
+
+.swiper__date,
+.swiper__descroption-text {
+  margin: 0;
 }
 
 .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
   background: $yellow;
+}
+
+.swiper__rating-wrapper {
+  margin-top: 20px;
 }

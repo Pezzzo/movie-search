@@ -37,8 +37,11 @@
   color: $white;
 
   &:hover .actors-preview__info-wrapper {
-    display: flex;
-    align-items: center;
+    @media (min-width: $tablet) {
+      display: flex;
+      align-items: center;
+    }
+
   }
 }
 
