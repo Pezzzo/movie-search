@@ -29,8 +29,8 @@
   background: $black-opacity-80;
 
   @media (min-width: $tablet) {
-    background: $black-opacity-60;
     top: 210px;
+    background: $black-opacity-60;
     visibility: hidden;
   }
 }
