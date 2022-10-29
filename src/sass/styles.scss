@@ -1,20 +1,29 @@
+/* stylelint-disable prettier/prettier */
+/* stylelint-disable import-notation */
 // Globals
 @import "normalise/normalise.scss";
+@import "variables/variables.scss";
+@import "mixins/mixins.scss";
 @import "media-queries/media-queries.scss";
 @import "colors/colors.scss";
 @import "global/global.scss";
 // Blocks
+@import "blocks/swiper.scss";
+@import "blocks/burger.scss";
 @import "blocks/preloader.scss";
+@import "blocks/page.scss";
 @import "blocks/movies-catalog.scss";
+@import "blocks/movie.scss";
 @import "blocks/actors-preview.scss";
 @import "blocks/actors.scss";
 @import "blocks/similar.scss";
 @import "blocks/stills.scss";
+@import "blocks/personality.scss";
 @import "blocks/modal.scss";
 @import "blocks/page-main.scss";
 @import "blocks/page-header.scss";
-@import "blocks/form-search.scss";
-@import "blocks/filters.scss";
+@import "blocks/page-nav.scss";
+@import "blocks/form.scss";
 @import "blocks/pagination.scss";
 @import "blocks/page-footer.scss";
 

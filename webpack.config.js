@@ -20,10 +20,12 @@ module.exports = {
     clean: true,
   },
   devServer: {
+    historyApiFallback: true,
     open: true,
+    hot: true,
     static: {
       directory: './src',
-      watch: true
+      watch: true,
     }
   },
   devtool: 'source-map',
@@ -37,33 +39,36 @@ module.exports = {
       filename: 'style.min.css',
     }),
     new HtmlWebpackPlugin({
-      template: "src/index.html",
-      scriptLoading: "blocking"
+      template: 'src/index.html',
+      scriptLoading: 'blocking'
     })],
+  resolve: {
+    extensions: ['', '.js', '.jsx',]
+  },
   module: {
     rules: [
       {
         test: /\.html$/i,
-        loader: "html-loader",
+        loader: 'html-loader',
       },
       {
         test: /\.(sa|sc|c)ss$/,
         use: [
           MiniCssExtractPlugin.loader,
-          "css-loader",
+          'css-loader',
           {
-            loader: "postcss-loader",
+            loader: 'postcss-loader',
             options: {
               postcssOptions: {
                 plugins: [
                   [
-                    "postcss-preset-env",
+                    'postcss-preset-env',
                   ],
                 ],
               },
             },
           },
-          "sass-loader",
+          'sass-loader',
         ],
       },
       {
@@ -75,10 +80,13 @@ module.exports = {
         type: 'asset/resource',
       },
       {
-        test: /\.m?js$/,
+        test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env', '@babel/preset-react']
+          }
         }
       }
     ]

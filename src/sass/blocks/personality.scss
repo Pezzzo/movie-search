@@ -1,0 +1,60 @@
+.personality__wrapper {
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: $tablet) {
+    flex-direction: row;
+  }
+}
+
+.personality__list {
+  li {
+    max-width: 700px;
+    list-style: disc;
+  }
+}
+
+.personality__img-wrapper {
+  text-align: center;
+
+  @media (min-width: $tablet) {
+    margin-right: 40px;
+  }
+}
+
+.personality__img {
+  min-width: 240px;
+  min-height: 380px;
+  object-fit: contain;
+
+  @media (min-width: $tablet) {
+    min-width: 320px;
+    min-height: 506px;
+  }
+}
+
+.personality__subtitle,
+.personality__description {
+  font-size: 16px;
+}
+
+.personality__subtitle {
+  color: $white-opacity-60;
+
+  &--nameru,
+  &--nameen {
+    color: $white;
+  }
+
+  &--nameru {
+    font-size: 32px;
+  }
+
+  &--nameen {
+    font-size: 26px;
+  }
+}
+
+.personality__description {
+  color: $white;
+}

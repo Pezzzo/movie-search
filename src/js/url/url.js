@@ -8,7 +8,8 @@ const URLS = {
   filmStills: 'https://kinopoiskapiunofficial.tech/api/v2.2/films/',
   similarFilms: 'https://kinopoiskapiunofficial.tech/api/v2.2/films/',
   actors: 'https://kinopoiskapiunofficial.tech/api/v1/staff?filmId=',
-  seasons: 'https://kinopoiskapiunofficial.tech/api/v2.2/films/'
+  seasons: 'https://kinopoiskapiunofficial.tech/api/v2.2/films/',
+  personality: 'https://kinopoiskapiunofficial.tech/api/v1/staff/',
 };
 
 export { URLS };

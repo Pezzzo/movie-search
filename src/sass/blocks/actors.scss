@@ -1,6 +1,12 @@
+.actors {
+  text-align: center;
+}
+
 .actors__list {
   display: flex;
   flex-direction: column;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 .actors__item {
@@ -19,4 +25,9 @@
 
 .actors__item-img {
   margin-right: 20px;
+  object-fit: contain;
+}
+
+.actors__name {
+  color: $white;
 }

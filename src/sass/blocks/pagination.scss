@@ -2,7 +2,7 @@
   position: relative;
   display: flex;
   justify-content: center;
-  margin-bottom: 50px;
+  margin-bottom: 160px;
 
   @media (min-width: $tablet) {
     margin-bottom: 40px;
@@ -34,16 +34,30 @@
 
 .pagination__link,
 .pagination__button {
-  min-width: 50px;
-  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
-  font-size: 26px;
-  background-color: $bg;
+  min-width: 50px;
+  height: 40px;
   color: $white;
+  font-size: 20px;
+  background-color: $bg;
+  cursor: pointer;
   transition: 0.3s;
+
+  @media (min-width: $tablet) {
+    font-size: 26px;
+  }
+}
+
+.pagination__button {
+  font-size: 30px;
+  border: none;
+  cursor: pointer;
+
+  @media (min-width: $tablet) {
+    font-size: 36px;
+  }
 }
 
 @media (min-width: $tablet) {
@@ -53,26 +67,20 @@
   }
 }
 
-
 .pagination__link:active,
 .pagination__button:active {
   background-color: $beige-opacity-10;
 }
 
-.pagination__link--active:hover,
-.pagination__link--active {
+.pagination__link--active,
+.pagination__link--active:hover {
   background-color: $yellow;
   cursor: auto;
 }
 
-.pagination__button {
-  cursor: pointer;
-  border: none;
-}
-
 .pagination__button:disabled {
-  pointer-events: none;
   opacity: 0.1;
+  pointer-events: none;
 }
 
 .display-none {

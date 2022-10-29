@@ -2,7 +2,7 @@
 <html class="page" lang="ru">
 
 <head>
-
+  <link rel="preconnect" href="https://kinopoiskapiunofficial.tech/api/" crossorigin>
   <meta charset="UTF-8">
   <meta name="Description" content="Поиск фильмов">
   <meta name="Keywords" content="искать кино, Поиск фильмов">
@@ -11,97 +11,14 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Поиск фильмов</title>
-
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
   <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
 
 </head>
 
 <body class="page__body">
-  <div class="preloader">
-    <div class="preloader__loader">
-      <img src="img/refresh_106672.png" alt="">
-    </div>
-  </div>
-  <header class="page-header">
-    <a class="page-header__link" href="index.html">
-      <img class="page-header__logo" src="img/logo.png" alt="логотип">
-    </a>
-    <form class="form-search">
-      <input class="form-search__input" type="text" name="movie" placeholder="Поиск">
-      <button class="form-search__button" type="submit">найти</button>
-    </form>
-  </header>
 
-  <main class="page-main outer-wrapper">
-    <div class="inner-wrapper">
-
-      <section class="filters">
-        <ul class="filters__list">
-          <li class="filters__item">
-            <div class="filters__link filters__link-popular filters__link--active" href="#" data-value="100">Популярное
-            </div>
-          </li>
-          <li class="filters__item">
-            <div class="filters__link filters__link-top250" href="#" data-value="250">ТОП-250</div>
-          </li>
-          <li class="filters__item">
-            <div class="filters__link filters__link-date" data-value="year">Выбрать по дате премьеры</div>
-            <div class="filters__form display-none">
-              <form class="form-filters">
-                <input class="form-filters__input" type="number" name="movie" placeholder="Год">
-                <select class="form-filters__select" name="select">
-                  <option value="JANUARY">Январь</option>
-                  <option value="FEBRUARY">Февраль</option>
-                  <option value="MARCH">Март</option>
-                  <option value="APRIL">Апрель</option>
-                  <option value="MAY">Май</option>
-                  <option value="JUNE">Июнь</option>
-                  <option value="JULY">Июль</option>
-                  <option value="AUGUST">Август</option>
-                  <option value="SEPTEMBER">Сентябрь</option>
-                  <option value="OCTOBER">Октябрь</option>
-                  <option value="NOVEMBER">Ноябрь</option>
-                  <option value="DECEMBER">Декабрь</option>
-                </select>
-                <button class="form-filters__button" type="submit">найти</button>
-              </form>
-            </div>
-          </li>
-        </ul>
-      </section>
-
-      <section class="movies-catalog">
-      </section>
-
-      <p class="text"></p>
-    </div>
-
-    <section class="pagination">
-      <button class="pagination__button pagination__button-start" type="button" disabled>«</button>
-      <button class="pagination__button pagination__button-prev" type="button" disabled>‹</button>
-      <div class="pagination-wrapper">
-        <div class="pagination-inner-wrapper">
-          <ul class="pagination__list">
-          </ul>
-        </div>
-      </div>
-      <button class="pagination__button pagination__button-next" type="button">›</button>
-      <button class="pagination__button pagination__button-end" type="button">»</button>
-    </section>
-
-    <button class="page-main__button-up display-none" type="button">↑</button>
-  </main>
-
-  <footer class="page-footer">
-    <a class="page-footer__link-kinopoisk" href="https://kinopoiskapiunofficial.tech/" target="_blank">Kinopoisk Api
-      Unofficial</a>
-    <a class="page-footer__link-author" href="https://github.com/Pezzzo" target="_blank">
-      <span class="page-footer__author">Pezzzo</span> <img class="page-footer__github-logo"
-        src="img/icons8-github-30.png" width="30" height="30" alt="">
-    </a>
-  </footer>
-  <section class="modal-section">
-  </section>
+  <div id="root"></div>
 
 </body>
 
