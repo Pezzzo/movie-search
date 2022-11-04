@@ -11,6 +11,7 @@ import { seasonsReducer } from "./reducers/seasons-reducer";
 import { rangePaginationCountReducer } from "./reducers/range-counter-reducer";
 import { personalityInfoReducer } from "./reducers/personality-reducer";
 import { movieSearchReducer } from "./reducers/input-search-reducer";
+import { emptyListReducer } from "./reducers/no-films-reducer";
 
 const rootReducer = combineReducers({
   request: requestStatusReducer,
@@ -24,7 +25,8 @@ const rootReducer = combineReducers({
   seasons: seasonsReducer,
   rangeCount: rangePaginationCountReducer,
   personalityInfo: personalityInfoReducer,
-  inputValue: movieSearchReducer
+  inputValue: movieSearchReducer,
+  emptyList: emptyListReducer
 });
 
 const saveToLocalStorage = (state) => {
