@@ -103,25 +103,34 @@ const setPaginationStateOnload = () => {
 
   links.forEach(e => arrElementsClasses.push(e.getAttribute('class')));
 
-  for (let i = 0; i <= arrElementsClasses.length; i++) {
+  if (arrElementsClasses.length === 0) {
+    return;
+  } else {
 
-    if (arrElementsClasses[i].includes('pagination__link--active')) {
-      if (i <= BUTTONS_PAGINATION_PAGE) {
-        buttonPrev.setAttribute('disabled', 'disabled');
-        buttonStart.setAttribute('disabled', 'disabled');
-      }
-      if (i >= arrElementsClasses.length-1) {
-        buttonNext.setAttribute('disabled', 'disabled');
-        buttonEnd.setAttribute('disabled', 'disabled');
-      }
-    }
+    for (let i = 0; i <= arrElementsClasses.length; i++) {
 
-    if (arrElementsClasses[i].includes('pagination__link--active')) {
-      let margin = Math.ceil(((i + 1) / BUTTONS_PAGINATION_PAGE) - 1);
-      rangeCounter = margin * PAGINATION_LIST_STEP;
-      return paginationList.style.marginLeft = `${rangeCounter}px`;
+      if (arrElementsClasses[i].includes('pagination__link--active')) {
+        if (i <= BUTTONS_PAGINATION_PAGE) {
+          buttonPrev.setAttribute('disabled', 'disabled');
+          buttonStart.setAttribute('disabled', 'disabled');
+        }
+        if (i >= arrElementsClasses.length-1) {
+          buttonNext.setAttribute('disabled', 'disabled');
+          buttonEnd.setAttribute('disabled', 'disabled');
+        }
+        let margin = Math.ceil(((i + 1) / BUTTONS_PAGINATION_PAGE) - 1);
+        rangeCounter = margin * PAGINATION_LIST_STEP;
+        return paginationList.style.marginLeft = `${rangeCounter}px`;
+      }
+
+      // if (arrElementsClasses[i].includes('pagination__link--active')) {
+      //   let margin = Math.ceil(((i + 1) / BUTTONS_PAGINATION_PAGE) - 1);
+      //   rangeCounter = margin * PAGINATION_LIST_STEP;
+      //   return paginationList.style.marginLeft = `${rangeCounter}px`;
+      // }
     }
   }
+
 };
 
 export { setPaginationStateOnClick, setPaginationStateOnload }

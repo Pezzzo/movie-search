@@ -1,5 +1,5 @@
-const API_KEY = '8016fba8-eb34-412d-831d-71e9316c1569';
-// const API_KEY = 'af7c9b5d-d938-441b-90e6-5e21ab4f4433';
+// const API_KEY = '8016fba8-eb34-412d-831d-71e9316c1569';
+const API_KEY = 'af7c9b5d-d938-441b-90e6-5e21ab4f4433';
 // const API_KEY = '602dd412-6dcf-4106-b093-de836da7aaf6';
 // const API_KEY = '2dcf472a-21e6-4742-b902-5796a587e6dd';
 
@@ -14,12 +14,14 @@ import { getSimilarList } from '../store/reducers/similar-films-reducer';
 import { getSeasonsCount } from '../store/reducers/seasons-reducer';
 import { getPersonalityInfo, getPersonalityInfoFacts, getPersonalityInfoFilms } from '../store/reducers/personality-reducer';
 import { requestOptions } from '../util/util';
+import { emptyList, notEmptyList } from './../store/reducers/no-films-reducer';
 
 const getFilms = (url) => {
 
   return async (dispatch) => {
     try {
       dispatch(fetch());
+      dispatch(notEmptyList());
       const response = await axios({
         method: 'get',
         url: url,
@@ -28,6 +30,10 @@ const getFilms = (url) => {
           "X-API-KEY": API_KEY,
         },
       });
+
+      if (response.data.pagesCount === 0) {
+        dispatch(emptyList());
+      }
 
       dispatch(getFilmsList(response.data.films));
       dispatch(getPageCount(response.data.pagesCount));

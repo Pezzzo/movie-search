@@ -14,6 +14,7 @@ const useSelectors = () => {
   const rangeCount = useSelector(state => state.rangeCount.rangeCount);
   const {personalityInfo, personalityInfoFacts, personalityInfoFilms} = useSelector(state => state.personalityInfo);
   const inputValue = useSelector(state => state.inputValue.inputValue);
+  const {emptyList, notEmptyList} = useSelector(state => state.emptyList);
 
   return {
     filmsList,
@@ -33,7 +34,9 @@ const useSelectors = () => {
     personalityInfo,
     personalityInfoFacts,
     personalityInfoFilms,
-    inputValue
+    inputValue,
+    emptyList,
+    notEmptyList
   }
 };
 
