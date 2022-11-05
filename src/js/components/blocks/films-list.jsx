@@ -7,6 +7,14 @@ const FilmsList = ({ data }) => {
 
   const dispatch = useDispatch();
 
+  const getRating = (rating) => {
+    if (rating === null) return;
+    if (!isNaN(Number(rating))) {
+      return <p className="movies-catalog__rating">{rating}</p>;
+    }
+    return;
+  };
+
   return (
     <>
       <section className="movies-catalog">
@@ -16,7 +24,7 @@ const FilmsList = ({ data }) => {
               className="movies-catalog__item"
               key={filmId}
               onClick={() => dispatch(getMovieId(filmId))}>
-              {!isNaN(Number(rating)) ? <p className="movies-catalog__rating">{rating}</p> : ''}
+              {getRating(rating)}
               <MovieLink
                 to={`/movie=${filmId}`}>
                 <img className="movies-catalog__img" id="movie" src={posterUrlPreview} width="280" height="420" alt="movie" />
