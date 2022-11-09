@@ -12,6 +12,17 @@ import { rangePaginationCountReducer } from "./reducers/range-counter-reducer";
 import { personalityInfoReducer } from "./reducers/personality-reducer";
 import { movieSearchReducer } from "./reducers/input-search-reducer";
 import { emptyListReducer } from "./reducers/no-films-reducer";
+import {
+  persistStore,
+  persistReducer ,
+  FLUSH,
+  REHYDRATE,
+  PAUSE,
+  PERSIST,
+  PURGE,
+  REGISTER,
+} from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
 
 const rootReducer = combineReducers({
   request: requestStatusReducer,
@@ -29,31 +40,22 @@ const rootReducer = combineReducers({
   emptyList: emptyListReducer
 });
 
-const saveToLocalStorage = (state) => {
-  try {
-    localStorage.setItem('state', JSON.stringify(state));
-  } catch (error) {
-    console.error(error);
-  }
+const persistConfig = {
+  key: 'root',
+  storage,
 };
 
-const loadFromLocalStorage = () => {
-  try {
-    const state = localStorage.getItem('state');
-    return state ? JSON.parse(state) : undefined;
-  } catch (error) {
-    console.error(error);
-    return undefined;
-  }
-};
+const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 const store = configureStore({
-  reducer: rootReducer,
-  preloadedState: loadFromLocalStorage()
+  reducer: persistedReducer,
+  middleware: (getDefaultMiddleware) =>
+  getDefaultMiddleware({
+    serializableCheck: {
+      ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+    },
+  }),
 });
 
-store.subscribe(() => {
-  saveToLocalStorage(store.getState());
-});
-
-export {store};
+export const persistor = persistStore(store);
+export { store };
