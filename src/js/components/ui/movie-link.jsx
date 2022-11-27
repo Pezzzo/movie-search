@@ -7,7 +7,7 @@ const MovieLink = ({ children, to }) => {
     <>
       <Link
         to={to}
-        className="movies-catalog__link">
+        className="swiper__link movie-link">
         {children}
       </Link>
     </>

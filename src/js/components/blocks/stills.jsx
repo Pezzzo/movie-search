@@ -24,7 +24,7 @@ const Stills = () => {
         modules={[Navigation, Pagination]}
         spaceBetween={50}
         slidesPerView={ resolution ? 3 : 1}
-        initialSlide={0}
+        initialSlide={2}
         pagination={{
           type: "progressbar",
         }}

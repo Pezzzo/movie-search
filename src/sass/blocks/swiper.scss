@@ -107,12 +107,12 @@
 }
 
 .swiper__item-img {
-  width: 220px;
+  min-width: 220px;
   height: 325px;
   object-fit: cover;
 
   @media (min-width: $tablet) {
-    width: 400px;
+    min-width: 400px;
     height: 592px;
     margin-right: 40px;
   }
